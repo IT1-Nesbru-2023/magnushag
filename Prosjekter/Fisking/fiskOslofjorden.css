@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.nav_links,
+ul,
+li,
+a {
+  display: flex;
+  padding: 2px 5px;
+  text-align: right;
+  margin-left: auto;
+  list-style: none;
+  padding: 8px 12px;
+  position: relative;
+  color: aliceblue;
+  text-decoration: none;
+  font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #16305C;
+  padding: 16px;
+  transition: transform 0.5s ease;
+}
+
+#nåværende {
+  text-decoration: underline;
+}
+
+a:hover {
+  transform: scale(1.1);
+}
+
+#overskrift {
+  background-color: #16305C;
+  color: aliceblue;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  padding: 30px;
+  font: bold;
+}
+
+#div1 {
+  background-color: #16305C;
+  width: 100%;
+  float: right;
+  height: 1070px;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: aliceblue;
+  line-height: 2;
+  text-align: center;
+}
+
+#div2 {
+  background-color: #16305C;
+  width: 50%;
+  float: left;
+  height: 200px;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: aliceblue;
+  line-height: 2;
+  text-align: center;
+}
+
+#div3 {
+  background-color: #16305C;
+  width: 50%;
+  float: right;
+  height: 200px;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: aliceblue;
+  line-height: 2;
+  text-align: center;
+}
+
+#fiskbak {
+  mix-blend-mode: multiply;
+  position: absolute;
+  top: 300px;
+  left: 25vw;
+  width: 50%;
+  opacity: 0.2;
+}
+
+#app {
+  text-decoration: underline;
+}
+
+#app:hover {
+  color: brown;
+  transform: none;
+}

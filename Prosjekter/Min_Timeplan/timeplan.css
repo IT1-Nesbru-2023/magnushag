@@ -1,0 +1,116 @@
+* {
+  margin: 0px;
+  font-family: "Poppins", sans-serif !important;
+}
+tbody > tr:nth-child(odd) {
+  background-color: #eeeff2;
+} 
+#Timeplan {
+  border-collapse: collapse;
+}
+#boks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+#topp {
+  text-decoration: underline;
+  font-size: 25px;
+  font-weight: bold;
+}
+.lunsj {
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+}
+th,
+td {
+  border-width: 1px;
+  border-style: solid;
+  padding: 7px;
+}
+.His {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 50px;
+  background-color: #348888;
+  border-radius: 7px;
+  border-style: solid;
+  border-color: aqua;
+  border-width: 0 0 0 2px;
+}
+.Matte {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 50px;
+  background-color: #22babb;
+  border-radius: 7px;
+  border-style: solid;
+  border-color: antiquewhite;
+  border-width: 0 0 0 2px;
+}
+.Religion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 50px;
+  background-color: #9ef8ee;
+  border-radius: 7px;
+  border-style: solid;
+  border-color: antiquewhite;
+  border-width: 0 0 0 2px;
+}
+.Norsk {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 50px;
+  background-color: #fa7f08;
+  border-radius: 7px;
+  border-style: solid;
+  border-color: antiquewhite;
+  border-width: 0 0 0 2px;
+}
+.IT1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 50px;
+  background-color: #f24405;
+  border-radius: 7px;
+  border-style: solid;
+  border-color: antiquewhite;
+  border-width: 0 0 0 2px;
+}
+.Fysikk {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 50px;
+  background-color: #ffec5c;
+  border-radius: 7px;
+  border-style: solid;
+  border-color: antiquewhite;
+  border-width: 0 0 0 2px;
+}
+.Gym {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 50px;
+  background-color: #b4cf66;
+  border-radius: 7px;
+  border-style: solid;
+  border-color: antiquewhite;
+  border-width: 0 0 0 2px;
+}

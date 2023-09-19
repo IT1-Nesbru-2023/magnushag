@@ -1,0 +1,106 @@
+body {
+  width: 1000px;
+  height: 1000px;
+  border-width: 5px;
+  border-color: white;
+  border-style: solid;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+#øverst {
+  display: flex;
+  position: absolute;
+  top: 250px;
+}
+#nederst {
+  display: flex;
+  position: absolute;
+  bottom: 300px;
+}
+#ring1 {
+  width: 260px;
+  height: 260px;
+  background-color: transparent;
+  border-radius: 50%;
+  border-width: 20px;
+  border-style: solid;
+  border-color: #0085c7;
+  z-index: 9;
+  margin-right: 10px;
+  transition: transform 1s ease;
+}
+#ring1:hover {
+  transform: scale(1.1);
+  box-shadow: 1px 2px 3px 4px rgba(20, 20, 20, 0.4);
+}
+#ring2 {
+  width: 260px;
+  height: 260px;
+  background-color: transparent;
+  border-radius: 50%;
+  border-width: 20px;
+  border-style: solid;
+  border-color: #000000;
+  z-index: 5;
+  margin-left: 0px;
+  margin-right: 10px;
+  transition: 1s ease;
+}
+#ring2:hover {
+  transform: scale(1.1);
+  box-shadow: 1px 2px 3px 4px rgba(20, 20, 20, 0.4);
+}
+#ring3 {
+  width: 260px;
+  height: 260px;
+  background-color: transparent;
+  border-radius: 50%;
+  border-width: 20px;
+  border-style: solid;
+  border-color: #df0024;
+  transition: transform 1s ease;
+}
+#ring3:hover {
+  transform: scale(1.1);
+  box-shadow: 1px 2px 3px 4px rgba(20, 20, 20, 0.4);
+}
+#ring4 {
+  width: 260px;
+  height: 260px;
+  background-color: transparent;
+  border-radius: 50%;
+  border-width: 20px;
+  border-style: solid;
+  border-color: #f4c300;
+  margin-right: 10px;
+  transition: transform 1s ease;
+}
+#ring4:hover {
+  transform: scale(1.1);
+  box-shadow: 1px 2px 3px 4px rgba(20, 20, 20, 0.4);
+}
+#ring5 {
+  width: 260px;
+  height: 260px;
+  background-color: transparent;
+  border-radius: 50%;
+  border-width: 20px;
+  border-style: solid;
+  border-color: #009f3d;
+  z-index: 9;
+  transition: transform 1s ease;
+}
+#ring5:hover {
+  transform: scale(1.1);
+  box-shadow: 1px 2px 3px 4px rgba(20, 20, 20, 0.4);
+}
+h1 {
+  position: absolute;
+  top: 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-size: 60px;
+}

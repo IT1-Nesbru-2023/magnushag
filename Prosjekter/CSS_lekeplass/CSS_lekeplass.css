@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #202b30;
+}
+div {
+  background-color: #f1f7e2;
+  margin: 100px;
+  border-radius: 10px;
+  padding: 50px;
+  line-height: 2;
+}
+#slutt {
+  background-color: #202b30;
+  color: aliceblue;
+  padding: 30px;
+  line-height: 5;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  border-radius: 0;
+}
+h1 {
+  color: #202b30;
+  padding: 30px;
+  text-decoration: underline;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+h3 {
+  color: #202b30;
+  padding: 20px;
+  text-align: center;
+}
+#bilde1 {
+  width: 600px;
+  border-radius: 20px;
+  border: 5px solid #74c0cf;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
+#bilde2 {
+  border-radius: 20px;
+  border: 5px solid #74c0cf;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 700px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+#head {
+  color: aliceblue;
+  background-color: #202b30;
+  width: 100%;
+  height: 60px;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  font-family: "Poppins", sans-serif;
+  opacity: 0.8;
+}
+#head a {
+  color: aliceblue;
+}
+#head a:hover {
+  transform: scale(1.8);
+  color: #74c0cf;
+}
+#head a:focus {
+  transform: scale(1.8);
+  color: #74c0cf;
+}
+#head a:visited {
+  transform: scale(1.8);
+  color: #74c0cf;
+}
+.sitat {
+  font-weight: bold;
+  font-style: italic;
+  margin: 30px;
+  padding: 10px;
+  background-color: #74c0cf;
+  border-radius: 3px;
+  border-width: 0 0 0 5px;
+  border-style: solid;
+  transition: 1s ease;
+}
+.sitat:hover {
+  padding: 40px;
+}
+

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matematikk</title>
+    <link rel="stylesheet" href="Følger_rekker.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="overskrift">
+      <h1>Følger i Matematikk</h1>
+    </div>
+    <div id="side">
+      <div id="innledning">
+        <p>
+          En tallfølge er en ordnet liste med tall hvor hvert tall er assosiert
+          med et positivt heltall n. Når vi skriver ut elementene etter stigende
+          n får vi en følge.
+        </p>
+      </div>
+      <div id="eks1">
+        <p>Eksempler</p>
+        <p>1, 2, 3, 4, 5 er en endelig tallføge med 5 ledd.</p>
+        <p>
+          3, 9, 27, ... er en uendelig tallføge. De tre prikkene til sist
+          kjennetegner dette.
+        </p>
+      </div>
+      <div id="rekeksp">
+        <p>Vi kan utrykke tallfølger rekursivt eller eksplisitt:</p>
+        <p>Rekursiv formel</p>
+        <p>
+          Vi kan angi en formel for en tallfølge ved å referere til det
+          foregående tallet. Da angir vi en rekursiv formel.
+        </p>
+        <p>
+          a_n = a_n-1 + n er et eksempel. Her er a_n det n-te ledded i følgen,
+          a_n-1 det foreågåendet leddet i følgen, og n er leddnummeret (element
+          av N).
+        </p>
+        <p>Eksplisitt formel</p>
+        <p>
+          Følger kan uttrykkes som funksjoner a_n, der n er et naturlig tall (og
+          0 i noen tilfeller). Eksplisitte formler lar oss finne et ledd i
+          følgen ved å kun vite leddnummeret.
+        </p>
+        <p>a_n = n^2 er et eksempel</p>
+      </div>
+      <div id="geogebra">
+        <h3>Prøv selv!</h3>
+        <p>
+          Her kan du lage følger ved å skrive ned følgens eksplisitte formel
+        </p>
+        <iframe
+          src="https://www.geogebra.org/classic/nvgh6yba?embed"
+          width="800"
+          height="600"
+          allowfullscreen
+          style="border: 5px solid #cdd7d6; border-radius: 4px"
+          frameborder="0"
+        ></iframe>
+      </div>
+      <div id="arigeo">
+        <p>Aritmetiske og geometriske følger:</p>
+        <p>Aritmestike følger</p>
+        <p>
+          En aritmetisk følge er en følge av tall der forskjellen (differansen)
+          mellom to tall som følger etter hverandre i rekken er konstant. I
+          følgen 3 + 6 + 9 + 12 er for eksempel differansen mellom to påfølgende
+          leddlik 3.
+        </p>
+        <p>
+          Vi kan utrykke aritmestiske følger eksplistitt slik: a_n = a_1 +
+          (n-1)d, der d er differansen
+        </p>
+        <p>Geometriske følger</p>
+        <p>
+          En geometrisk rekke er en rekke der forholdet mellom hvert ledd og det
+          foregående er konstant.
+        </p>
+        <p>
+          Vi kan utrykke geometriske følger eksplistitt slik: a_n = a_1 *
+          k^(n-1), der k er kvotienten
+        </p>
+      </div>
+      <div id="slutt">
+        <p>Test deg selv å se hva du må øve mer på!</p>
+        <iframe
+          src="https://www.h5p.ndla.no/s/resources/78736d82-ef77-45ff-8024-7e85f2843087"
+          width="800"
+          height="273"
+          frameborder="0"
+          allowfullscreen="allowfullscreen"
+          allow="geolocation *; microphone *; camera *; midi *; encrypted-media *"
+          title="Hva kan du om tallfølger?"
+        ></iframe>
+        <script src="https://ca.h5p.ndla.no/h5p-php-library/js/h5p-resizer.js"></script>
+      </div>
+      <div id="sist">
+        <p>Av:</p>
+        <p>Magnus Hægh</p>
+        <p>Mye av informasjonen er hentet fra:</p>
+        <ul id="nettsider">
+          <li>
+            <a href="https://www.matematikk.net/side/Tallf%C3%B8lger"
+              >Matematikk.net</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://ndla.no/subject:1:4200b774-5b7b-4900-bf1d-e0b298b9cb97/topic:2:165921/topic:2:165924/resource:1:115153"
+              >NDLA</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
