@@ -1,0 +1,163 @@
+/*angir margin og padding for hele siden*/
+* {
+  margin: 0;
+  padding: 0;
+}
+/*Lager en stil for teksten og legger til bakgrunnbilde med gradient*/
+#overskrift {
+  height: 600px;
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(100, 100, 100, 0.4)
+    ),
+    url("Bilder/IMG_0925.jpg");
+  background-size: cover;
+  font-size: 110px;
+  font-family: "Poppins", sans-serif;
+  color: aliceblue;
+  font-weight: bolder;
+  text-decoration: underline;
+  text-decoration-color: #0d65d9;
+}
+/*Bruker display: inline; slik at lenkene står sidelengs for hverandre*/
+#nav li {
+  display: inline;
+  float: left;
+  margin-left: 230px;
+}
+/*Setter display: block; slik at jeg kan endre på elementenes margin og padding*/
+#nav a {
+  display: block;
+  padding: 10px;
+  margin: 30px;
+  margin-right: 5px;
+  list-style-type: none;
+  text-decoration: none;
+  color: black;
+  font-family: "Poppins", sans-serif;
+}
+/*Lager understrekningsanimasjon*/
+#nav a {
+  display: inline-block;
+  position: relative;
+}
+#nav a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 5px;
+  bottom: 0;
+  left: 0;
+  background-color: #0d65d9;
+  transform-origin: bottom right;
+  transition: transform 0.6s ease-out;
+}
+/* når klienten har musen over linken | når det står :hover::after, vil stiler gjelde på pseudo-elementet ::after, når man holder musepekeren over */
+#nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+/* når klienten trykker endres fargen til hvit */
+#nav a:active {
+  color: white;
+}
+/*Leger en stil for generelt-elementet*/
+#generelt {
+  width: 70%;
+  margin-left: 15vw;
+  line-height: 2;
+  font-size: 25px;
+  margin-bottom: 100px;
+}
+/*Bruker > p:first-child slik at det kun er det første p-elementet som for denne css-en */
+#generelt > p:first-child {
+  font-family: "Poppins", sans-serif;
+  text-decoration: underline;
+  text-decoration-color: #0d65d9;
+}
+#meny {
+  background-color: #0d65d9;
+  padding-left: 230px;
+  padding-top: 50px;
+  padding-bottom: 70px;
+  margin-top: 50px;
+  color: aliceblue;
+  line-height: 2;
+  font-size: 30px;
+}
+#meny a {
+  color: blue;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 80px;
+}
+#meny a:hover {
+  color: aliceblue;
+}
+#lokasjon {
+  background-color: white;
+  padding-left: 230px;
+  padding-bottom: 30px;
+  margin-top: 50px;
+  color: #0d65d9;
+  line-height: 2;
+  font-size: 30px;
+}
+#lokasjon a {
+  color: #0d65d9;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 80px;
+}
+#lokasjon a:hover {
+  color: aliceblue;
+}
+#is {
+  background-color: #0d65d9;
+  padding-left: 230px;
+  padding-top: 50px;
+  padding-bottom: 70px;
+  margin-top: 50px;
+  color: aliceblue;
+  line-height: 2;
+  font-size: 30px;
+}
+#is a {
+  color: blue;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 80px;
+}
+#is a:hover {
+  color: aliceblue;
+}
+#ansatte {
+  background-color: white;
+  padding-left: 230px;
+  padding-bottom: 30px;
+  margin-top: 50px;
+  color: #0d65d9;
+  line-height: 2;
+  font-size: 30px;
+}
+#ansatte a {
+  color: #0d65d9;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 80px;
+}
+#ansatte a:hover {
+  color: aliceblue;
+}
+#slutt {
+  height: 400px;
+  background-color: #f2f2f2;
+  text-align: center;
+  padding-top: 70px;
+  line-height: 5;
+  font-size: 20px;
+}
+#slutt img {
+  width: 300px;
+}

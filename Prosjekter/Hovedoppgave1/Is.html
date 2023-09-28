@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nesbru kantine sitt isutvalg</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <!--Lager internal css-->
+    <style>
+      * {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+      }
+      #boks {
+        height: 600px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      table {
+        border-collapse: collapse;
+        text-align: center;
+      }
+      th,
+      td {
+        border-width: 2px;
+        border-style: solid;
+        padding: 7px;
+      }
+      /*Legger til bakgrunnsfarge bak bak elementene med class-navn "farge*/
+      .farge {
+        background-color: #eeeff2;
+        font-size: 25px;
+      }
+      img {
+        width: 50px;
+      }
+      #slutt {
+        height: 200px;
+        text-align: center;
+      }
+      #slutt a {
+        text-decoration: none; /*Text-decoration: none; fjerner deafault-css på lenkene*/
+        font-family: "Poppins", sans-serif;
+        font-size: 25px;
+        color: #0d65d9;
+        font-weight: bolder;
+      }
+      #slutt a:hover {
+        color: aliceblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="boks">
+      <table>
+        <thead>
+          <tr class="farge">
+            <th colspan="8">Isutvalg Nesbru kantine 2023/24</th> <!--colspan: 8; gjør at raden strekker seg over 8 kolonner-->
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="farge" style="font-size: 15px;">
+            <td></td>
+            <td>Royal Trippel Sjokolade</td>
+            <td>Royal Trippel Magi</td>
+            <td>Royal Trippel</td>
+            <td>1 kule Fazer Dumle</td>
+            <td>1 kule Salt Lakris</td>
+            <td>1 kule Krokan</td>
+            <td>1 kule Jordbær</td>
+          </tr>
+          <tr>
+            <td class="farge">Bilde</td>
+            <td><img src="Bilder/is1.png" alt=""></td>
+            <td><img src="Bilder/is2.png" alt=""></td>
+            <td><img src="Bilder/is4.png" alt=""></td>
+            <td><img src="Bilder/is5.png" alt=""></td>
+            <td><img src="Bilder/is6.png" alt=""></td>
+            <td><img src="Bilder/is7.png" alt=""></td>
+            <td><img src="Bilder/is8.png" alt=""></td>
+          </tr>
+          <tr>
+            <td class="farge">Pris</td>
+            <td>35 kr</td>
+            <td>35 kr</td>
+            <td>35 kr</td>
+            <td>30 kr/kule</td>
+            <td>30 kr/kule</td>
+            <td>30 kr/kule</td>
+            <td>30 kr/kule</td>
+          </tr>
+          <tr>
+            <td class="farge">Kalorier</td>
+            <td>361</td>
+            <td>340</td>
+            <td>338</td>
+            <td>325/kule</td>
+            <td>311/kule</td>
+            <td>300/kule</td>
+            <td>270/kule</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="slutt">
+        <a href="kantina.html">Hjem</a>
+      </div>
+  </body>
+</html>

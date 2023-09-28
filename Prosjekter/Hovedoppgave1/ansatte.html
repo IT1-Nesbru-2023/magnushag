@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kantinas ansatte</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <!--Lager internal css-->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      /*I det følgene lages det tre div-er som setter ved siden av hverandre*/
+      /*Dette gjøres med width: 33.33%; og float-funksjonen*/
+      #div1 {
+        background-color: #0d65d9;
+        width: 33.33%;
+        float: left;
+        height: 707px;
+        font-size: 20px;
+        font-family: "Poppins", sans-serif;
+        color: aliceblue;
+        line-height: 2;
+      }
+      #div3 {
+        background-color: white;
+        width: 33.33%;
+        margin: 0 auto;
+        height: 707px;
+        font-size: 20px;
+        font-family: "Poppins", sans-serif;
+        color: aliceblue;
+        line-height: 2;
+      }
+      #div2 {
+        background-color: #0d65d9;
+        width: 33.33%;
+        float: right;
+        height: 707px;
+        font-size: 20px;
+        font-family: "Poppins", sans-serif;
+        color: aliceblue;
+        line-height: 2;
+      }
+      /*Bruker h1 som selektor ettersom vi kun har ett h1-element på siden*/
+      h1 {
+        margin-left: 70px;
+        padding-top: 40px;
+        color: blue;
+        text-decoration: underline;
+        text-decoration-color: aliceblue;
+      }
+      img {
+        border-radius: 50%;
+        border-color: aliceblue;
+        border-width: 5px;
+        border-style: solid;
+        width: 200px;
+        margin-left: 140px;
+      }
+      p {
+        font-size: 15px;
+        margin: 20px;
+      }
+      #slutt {
+        height: 200px;
+        text-align: center;
+        background-color: #f2f2f2;
+        padding-top: 110px;
+      }
+      #slutt a {
+        text-decoration: none;
+        font-family: "Poppins", sans-serif;
+        font-size: 25px;
+        color: #0d65d9;
+        font-weight: bolder;
+      }
+      #slutt a:hover {
+        color: aliceblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="div1">
+      <h1>Rune</h1>
+      <img src="Bilder/Rune.jpg" alt="Bilde av Rune"/>
+      <p>
+        Rune er kantinas kulinariske trollmann som bringer en uimotståelig
+        smaksopplevelse til hver rett han tilbereder. Med årevis av erfaring og
+        lidenskap for matlaging, forvandler Rune hver lunsj til et gastronomisk
+        eventyr. Hans kreative tolkning av tradisjonelle retter og nyskapende
+        smakskombinasjoner vil garantert få smaksløkene dine til å danse av
+        glede. Nyt måltidene hans med tillit, og la Rune ta deg med på en
+        spennende reise gjennom smakens verden.
+      </p>
+    </div>
+    <div id="div2">
+      <h1>Patricia</h1>
+      <img src="Bilder/Patricia.jpg" alt="Bilde av Patricia"/>
+      <p>
+        Patricia er kantinas helsebevisste ekspert som alltid har sunnhet i
+        tankene når hun utvikler menyen. Hun er dedikert til å tilby deg
+        næringsrike og smakfulle alternativer som gir deg energi gjennom dagen.
+        Med sin lidenskap for sunn matlaging og kunnskap om ernæring, hjelper
+        Patricia deg med å ta smarte matvalg uten å ofre smaken. Hun er alltid
+        tilgjengelig for å svare på spørsmål om sunn livsstil og deler gjerne
+        tips for å opprettholde en balansert diett.
+      </p>
+    </div>
+    <div id="div3">
+      <h1
+        style="
+          color: black;
+          text-decoration: underline;
+          text-decoration-color: #0d65d9;  
+        " 
+      >
+        Gunnar
+      </h1>
+      <p style="color: black"> <!--Her brukes det inline-css-->
+        Gunnar er hjertet av kantina og alltid klar til å ønske deg velkommen
+        med et smil. Hans vennlighet og gode humør er smittsomt, og han strekker
+        seg alltid langt for å sikre at du har den beste kantineopplevelsen
+        mulig. Med sin utmerkede kundeservice og oppmerksomhet på detaljer, gjør
+        Gunnar enhver lunsjpause til en hyggelig og avslappende stund. Ikke nøl
+        med å spørre ham om anbefalinger eller spesielle forespørsler - Gunnar
+        er her for å gjøre ditt besøk minneverdig.
+      </p>
+      <img
+        style="border-color: #0d65d9; margin-top: 40px"
+        src="Bilder/Gunnar.jpg" alt="Bilde av Gunnar"
+      />
+    </div>
+    <div id="slutt">
+      <a href="kantina.html">Hjem</a>
+    </div>
+  </body>
+</html>
