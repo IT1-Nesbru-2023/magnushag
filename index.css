@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+.sidebar {
+  background: #309bde;
+  position: fixed;
+  height: 100%;
+  width: 20%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+.sidebar a {
+  color: #fff;
+  padding: 10px 15px 10px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  display: block;
+  line-height: 2;
+}
+.sidebar a:hover {
+  background: #226f9e;
+}
+.sidebar h2 {
+  padding: 10px 15px 10px 16px;
+  color: #fff;
+  border-bottom-style: solid;
+}
+.sidebar p {
+  color: #226f9e;
+  padding-left: 20px;
+  padding-top: 280px;
+}
+.main {
+  background-color: #fff;
+  margin-left: 20%;
+  padding: 4px 10px;
+  color: #000;
+  display: inline-block;
+  text-align: center;
+}
+.overskrift {
+  margin-left: 20%;
+  color: #000;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-decoration: underline;
+  text-decoration-color: #309bde;
+  font-size: 35px;
+  margin-bottom: 40px;
+  font-size: 50px;
+  line-height: 2;
+}
+h2 {
+  text-align: left;
+}
+button {
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-style: solid;
+  border-color: #309bde;
+  border-width: 0 0 0 5px;
+  font-size: 20px;
+  position: relative;
+  width: 30vw;
+  padding: 35px 0;
+  text-align: center;
+  margin: 40px 10px;
+  font-weight: bold;
+  background: transparent;
+  color: #000;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 0;
+}
+span {
+  background: #309bde;
+  height: 100%;
+  width: 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transition: 0.5s;
+  z-index: -1;
+}
+button:hover span {
+  width: 100%;
+}
+
+#uke36,
+#uke37,
+#uke38 {
+  margin-top: 100px;
+}
+
+/*For en responsiv nettide (universell utforming)*/
+@media screen and (max-width: 600px) {
+  .sidebar {
+    /*padding-top: 15px;
+        width: 155px;*/
+    width: 0%;
+  }
+  .main {
+    margin-left: 0%;
+    font-size: 15px;
+  }
+  .overskrift {
+    margin-left: 0;
+  }
+  p {
+    display: inline-block;
+  }
+}
