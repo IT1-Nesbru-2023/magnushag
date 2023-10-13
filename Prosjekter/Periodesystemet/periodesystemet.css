@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+#overskrift {
+  width: 100%;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+span {
+  background-size: 100% 15%;
+  background-repeat: repeat-x;
+  background-position: left 0% bottom 10%;
+}
+.underline {
+  background-image: linear-gradient(
+    90deg,
+    #3d85c6 0%,
+    #3d85c6 12.5%,
+    #cc0000 12.5%,
+    #cc0000 25%,
+    #6aa84f 25%,
+    #6aa84f 37.5%,
+    #3d85c6 37.5%,
+    #3d85c6 50%,
+    #cc0000 50%,
+    #cc0000 62.5%,
+    #6aa84f 62.5%,
+    #6aa84f 75%,
+    #3d85c6 75%,
+    #3d85c6 87.5%,
+    #cc0000 87.5%,
+    #cc0000 100%
+  );
+}
+#hoved {
+  margin-left: 5vw;
+  margin-left: 5vw;
+  width: 90vw;
+  height: 80vh;
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(19, 1fr);
+  grid-template-rows: repeat(8, 1fr) 0.1fr repeat(2, 1fr);
+  font-size: px;
+  color: aliceblue;
+}
+#hoved > div {
+  border-radius: 7px;
+  text-align: center;
+}
+.usynlig {
+  opacity: 0;
+}
+.periode {
+  background-color: white !important;
+  border-width: 0 !important;
+  text-align: center;
+  padding-top: 12px;
+  color: black;
+  font-size: 15px;
+}
+.gruppe {
+  background-color: white !important;
+  border-width: 0 !important;
+  text-align: center;
+  padding-top: 20px;
+  color: black;
+  font-size: 15px;
+}
+#hoved div:hover {
+  transform: scale(1.3);
+}
+#hoved div p {
+  display: none;
+  font-size: 12px;
+}
+#hoved div:hover p {
+  display: contents;
+}
+.periode:hover {
+  transform: scale(1) !important;
+}
+.gruppe:hover {
+  transform: scale(1) !important;
+}
+.fortsett {
+  font-size: 15px;
+  background-color: white !important;
+  border-width: 0 !important;
+  color: black;
+}
+.fortsett:hover {
+  transform: scale(1) !important;
+}
+.navn {
+  font-size: 10px;
+  background-color: white !important;
+  border-width: 0 !important;
+  color: black;
+}
+.navn:hover {
+  transform: scale(1) !important;
+}
+img {
+  width: 70px;
+  mix-blend-mode: multiply;
+  filter: contrast(1);
+}
+.bilde {
+  background-color: white !important;
+  border-width: 0 !important;
+}
+.bilde:hover {
+  transform: scale(1) !important;
+}
+.blo {
+  background-color: #3d85c6;
+}
+.rod {
+  background-color: #cc0000;
+}
+.gronn {
+  background-color: #6aa84f;
+}
