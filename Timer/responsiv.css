@@ -123,4 +123,7 @@ button {
   .side div h3:first-child {
     padding-top: 1vh;
   }
+  button {
+    padding: 5px 10px;
+  }
 }
