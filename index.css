@@ -32,11 +32,6 @@ html {
   color: #fff;
   border-bottom-style: solid;
 }
-.sidebar p {
-  color: #226f9e;
-  padding-left: 20px;
-  padding-top: 280px;
-}
 .main {
   background-color: #fff;
   margin-left: 20%;
@@ -99,7 +94,8 @@ button:hover span {
 #uke36,
 #uke37,
 #uke38,
-#uke39 {
+#uke39,
+#uke41 {
   margin-top: 100px;
 }
 
