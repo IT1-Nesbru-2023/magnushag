@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let antallSekunder = prompt("Skriv antal sekunder her: ");
+
+      let antallTimer = antallSekunder / 3600;
+
+      let Timer = Math.floor(antallTimer);
+
+      let rest1 = antallTimer - Timer;
+
+      let antallMinutter = rest1 * 60;
+
+      let Minutter = Math.floor(antallMinutter);
+
+      let rest2 = antallMinutter - Minutter;
+
+      let antallSek = rest2 * 60;
+
+      alert(
+        antallSekunder +
+          " sekunder tilsvarer: " +
+          Timer +
+          " time(r), " +
+          Minutter +
+          " minutter og " +
+          antallSek +
+          " sekunder"
+      );
+    </script>
+  </body>
+</html>

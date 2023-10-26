@@ -40,18 +40,28 @@ html {
   display: inline-block;
   text-align: center;
 }
-.overskrift {
+.overskrift h3 {
   margin-left: 20%;
   color: #000;
   text-align: center;
   padding-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 0;
   text-decoration: underline;
   text-decoration-color: #309bde;
-  font-size: 35px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   font-size: 50px;
   line-height: 2;
+}
+.overskrift p {
+  margin-left: 20%;
+  color: #000;
+  text-align: center;
+  padding-top: 0;
+  padding-bottom: 10px;
+  text-decoration: none;
+  text-decoration-color: none;
+  font-size: 20px;
+  margin-bottom: 30px;
 }
 h2 {
   text-align: left;
@@ -95,7 +105,9 @@ button:hover span {
 #uke37,
 #uke38,
 #uke39,
-#uke41 {
+#uke41,
+#uke42,
+#uke43 {
   margin-top: 100px;
 }
 

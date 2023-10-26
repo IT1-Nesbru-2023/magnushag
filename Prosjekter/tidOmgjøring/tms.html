@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let antallTimer = prompt("Skriv antanll timer");
+      let antallMinutter = prompt("Skriv antanll minutter");
+      let antallSekunder = prompt("Skriv antanll sekunder");
+
+      let sumSekunder =
+        antallTimer * 3600 + antallMinutter * 60 + antallSekunder;
+
+      alert(
+        antallTimer +
+          " time(r), " +
+          antallMinutter +
+          " minutter og " +
+          antallSekunder +
+          " sekunder blir totalt: " +
+          sumSekunder +
+          " sekunder"
+      );
+    </script>
+  </body>
+</html>
