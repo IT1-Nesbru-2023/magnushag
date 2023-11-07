@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <title>Tittel på siden</title>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        background-color: #f5f5f5;
+        font-family: Georgia, serif;
+      }
+      #hoved {
+        width: 60%; /* bredde: 60 % av vinduet */
+        margin: 100px auto; /* 100 px over elementet, auto midtstiller det */
+        padding: 40px; /* luft mellom kantlinjene og innholdet */
+        background-color: white; /* hvit bakgrunnsfarge */
+        border-width: 5px;
+        border-style: solid;
+        border-radius: 20px;
+        border-color: blueviolet;
+        color: aliceblue;
+        background-color: black;
+        font-size: 1vh;
+      }
+      #div1 > p {
+        color: aquamarine;
+      }
+      p:last-child {
+        color: blue;
+      }
+      p {
+        background-color: hsl(180, 50%, 50%);
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="hoved">
+      <h1>Overskrift h1</h1>
+
+      <h2>Overskrift h2</h2>
+      <p>
+        <em>nullam</em> sapien mauris, lacinia vel bibendum ac, dictum eu quam.
+        Sed scelerisque congue porttitor. Praesent convallis purus a euismod
+        aliquam. Vestibulum accumsan, nisi a finibus malesuada, leo odio
+        molestie ante, elementum ultrices lacus nisi quis dui.
+      </p>
+      <h2>Overskrift h2</h2>
+      <p>
+        Fusce malesuada dolor et varius euismod. Ut vel imperdiet mauris.
+        Suspendisse lacinia laoreet varius. Quisque ipsum lacus, euismod vitae
+        eleifend ut, aliquet id tellus.
+      </p>
+      <div id="div1">
+        <p>Dette er en <strong>eksempel</strong> tekst.</p>
+        <p>jhsdjkfh</p>
+        <div>
+          <p>Dette er en annen <em>tekst</em>.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
