@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+.sidebar {
+  background: #309bde;
+  position: fixed;
+  height: 100%;
+  width: 20%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+.sidebar a {
+  color: #fff;
+  padding: 10px 15px 10px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  display: block;
+  line-height: 2;
+}
+.sidebar a:hover {
+  background: #226f9e;
+}
+.sidebar h2 {
+  padding: 10px 15px 10px 16px;
+  color: #fff;
+  border-bottom-style: solid;
+}
+.main {
+  background-color: #fff;
+  margin-left: 20%;
+  padding: 4px 10px;
+  color: #000;
+  display: inline-block;
+  text-align: center;
+}
+.overskrift h3 {
+  margin-left: 20%;
+  color: #000;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 0;
+  text-decoration: underline;
+  text-decoration-color: #309bde;
+  margin-bottom: 20px;
+  font-size: 50px;
+  line-height: 2;
+}
+.overskrift p {
+  margin-left: 20%;
+  color: #000;
+  text-align: center;
+  padding-top: 0;
+  padding-bottom: 10px;
+  text-decoration: none;
+  text-decoration-color: none;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+h2 {
+  text-align: left;
+}
+button {
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-style: solid;
+  border-color: #309bde;
+  border-width: 0 0 0 5px;
+  font-size: 20px;
+  position: relative;
+  width: 30vw;
+  padding: 35px 0;
+  text-align: center;
+  margin: 40px 10px;
+  font-weight: bold;
+  background: transparent;
+  color: #000;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 0;
+}
+span {
+  background: #309bde;
+  height: 100%;
+  width: 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transition: 0.5s;
+  z-index: -1;
+}
+button:hover span {
+  width: 100%;
+}
+
+#uke36,
+#uke37,
+#uke38,
+#uke39,
+#uke41,
+#uke42,
+#uke43, 
+#uke44,
+#uke45 {
+  margin-top: 100px;
+}
+
+/*For en responsiv nettide (universell utforming)*/
+@media screen and (max-width: 600px) {
+  .sidebar {
+    /*padding-top: 15px;
+        width: 155px;*/
+    width: 0%;
+  }
+  .main {
+    margin-left: 0%;
+    font-size: 15px;
+  }
+  .overskrift {
+    margin-left: 0;
+  }
+  p {
+    display: inline-block;
+  }
+}
