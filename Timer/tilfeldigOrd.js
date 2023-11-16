@@ -7,6 +7,7 @@ let antall_bokstaver = document.querySelector("#inpTall");
 
 knapp.addEventListener("click", tilfeldigOrd);
 
+// Funksjon som skriver ut et tilfeldig ord.
 function tilfeldigOrd() {
   let streng = "";
   let antallBokstaver = parseInt(antall_bokstaver.value);
@@ -16,8 +17,9 @@ function tilfeldigOrd() {
     for (let i = 1; i < antallBokstaver / 2 + 1; i++) {
       let konst = konstonant[Math.floor(Math.random() * konstonant.length)];
       let vok = vokal[Math.floor(Math.random() * vokal.length)];
-      streng = streng + konst + vok;
+      streng = streng + konst + vok; // skriver ut annenhver konsonant og vokal
     }
-  } 
+  }
   resultat.innerHTML = streng;
 }
+

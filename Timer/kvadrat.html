@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Finn areal</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,100&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      #boks {
+        margin: 30px auto;
+        width: 250px;
+        height: 250px;
+        border-width: 10px;
+        border-color: black;
+        border-style: solid;
+        text-align: center;
+        font-size: 25px;
+        background-color: #309bde;
+        font-family: "Roboto", sans-serif;
+      }
+      #side {
+        margin-top: 0px;
+      }
+      #main {
+        text-align: center;
+        font-family: "Roboto", sans-serif;
+      }
+      #side {
+        font-size: 20px;
+      }
+      input {
+        margin-top: 5px;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      button {
+        background-color: aliceblue;
+        border: none;
+        color: black;
+        padding: 1vh 2vw;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 15px;
+      }
+      button:hover {
+        color: gray;
+      }
+      #areal {
+        padding-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="boks">
+      <p id="side">Sidelengde:</p>
+      <p id="areal">Areal:</p>
+      <p id="resultat"></p>
+    </div>
+    <div id="main">
+      <h2>Regn ut arealet av kvadratet</h2>
+      <label for="inpTall">Skriv inn sidelengden:</label>
+      <input id="inpTall" placeholder="3" type="number" />
+      <button>Trykk for å skrive ut</button>
+    </div>
+    <script src="kvadrat.js"></script>
+  </body>
+</html>

@@ -23,6 +23,7 @@ html {
   font-size: 25px;
   display: block;
   line-height: 2;
+  font-size: 20px;
 }
 .sidebar a:hover {
   background: #226f9e;
@@ -109,7 +110,8 @@ button:hover span {
 #uke42,
 #uke43, 
 #uke44,
-#uke45 {
+#uke45,
+#uke46 {
   margin-top: 100px;
 }
 
