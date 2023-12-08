@@ -49,15 +49,9 @@ let ordArray = [
   "api",
   "server",
   "brukergrensesnitt",
-  "DOM",
-  "DNS",
-  "HTTP",
-  "HTTPS",
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "Python",
-  "Java",
+  "javaScript",
+  "python",
+  "java",
 ];
 
 //Definerer noen globale variabler
