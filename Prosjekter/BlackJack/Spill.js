@@ -4,7 +4,6 @@ let nyttSpill = document.getElementById("nyttSpill");
 let sumDealer = 0;
 let sumDeg = 0;
 let gjemtKort;
-let kortstokk;
 let kanHit = true; //tillater å hitte når sumDeg < 21
 let hitKnapp = document.getElementById("hit");
 let stayKnapp = document.getElementById("stay");
@@ -26,40 +25,66 @@ function visSkjulteElementer() {
 }
 
 /*Med window.onload trigges en funksjonen med en gang siden er helt lastet inn.
-Funksjonen kaller funksjonene lagKortstokk og blandKortstokk*/
+Funksjonen kaller funksjonen blandKortstokk*/
 window.onload = function () {
-  lagKortstokk();
   blandKortstokk();
 };
 
-function lagKortstokk() {
-  let verdier = [
-    "A",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-    "J",
-    "Q",
-    "K",
-  ];
-  /*C, D, H og S står for hendholsvis clubs, diamonds, harts og spades. Bruker dette pga måten
-  kort-bildene er navngitt (Eks: "4-C")*/
-  let typer = ["C", "D", "H", "S"];
-  kortstokk = []; //Starter arrayen der kortene skal lagres
-
-  /*For-løkken pusher alle 52 kortene i arrayen kortstokk*/
-  for (let i = 0; i < typer.length; i++) {
-    for (let j = 0; j < verdier.length; j++) {
-      kortstokk.push(verdier[j] + "-" + typer[i]);
-    }
-  }
-}
+//Array som inneholder hele kortstokken
+let kortstokk = [
+  "2-D",
+  "2-C",
+  "2-H",
+  "2-S",
+  "3-D",
+  "3-C",
+  "3-H",
+  "3-S",
+  "4-D",
+  "4-C",
+  "4-H",
+  "4-S",
+  "5-D",
+  "5-C",
+  "5-H",
+  "5-S",
+  "6-D",
+  "6-C",
+  "6-H",
+  "6-S",
+  "7-D",
+  "7-C",
+  "7-H",
+  "7-S",
+  "8-D",
+  "8-C",
+  "8-H",
+  "8-S",
+  "9-D",
+  "9-C",
+  "9-H",
+  "9-S",
+  "10-D",
+  "10-C",
+  "10-H",
+  "10-S",
+  "J-D",
+  "J-C",
+  "J-H",
+  "J-S",
+  "Q-D",
+  "Q-C",
+  "Q-H",
+  "Q-S",
+  "K-D",
+  "K-C",
+  "K-H",
+  "K-S",
+  "A-D",
+  "A-C",
+  "A-H",
+  "A-S",
+];
 
 /*I følgenede funksjon blandes kortsdtokken. Denne funksjonen ble tatt fra: 
 https://www.geeksforgeeks.org/javascript-program-to-shuffle-deck-of-cards/*/
@@ -103,15 +128,16 @@ function startSpill() {
   for (let i = 1; i <= 2; i++) {
     let kortBilde = document.createElement("img");
     let kort = kortstokk.pop();
-    kortBilde.src = "./kort/" + kort + ".png"; 
+    kortBilde.src = "./kort/" + kort + ".png";
     sumDeg += faaVerdi(kort);
     document.getElementById("sKort").append(kortBilde);
     if (sumDeg == 21 && sumDealer !== 21) {
-      document.getElementById("respons").innerText = "Du fikk utdelt Blackjack og vant!";
+      document.getElementById("respons").innerText =
+        "Du fikk utdelt Blackjack og vant!";
       document.getElementById("winLyd").play(); //Spiller av lyd
-    }
-    else if (sumDeg == 21 && sumDealer == 21) {
-      document.getElementById("respons").innerText = "Både deg og dealeren fikk utdelt Blackjack. Det ble uavgjort!!";
+    } else if (sumDeg == 21 && sumDealer == 21) {
+      document.getElementById("respons").innerText =
+        "Både deg og dealeren fikk utdelt Blackjack. Det ble uavgjort!!";
     }
   }
 
@@ -123,9 +149,8 @@ function startSpill() {
 nyttSpill.addEventListener("click", startNyttSpill);
 
 function startNyttSpill() {
-  location.reload()
-};
-
+  location.reload();
+}
 
 function stay() {
   kanHit = false; //slik at man ikke kan hitte dersom man har trykket stay
@@ -193,5 +218,3 @@ function faaVerdi(kort) {
   //Hvis det er et tall returnes tallet som en integer (heltall)
   return parseInt(verdi);
 }
-
-

@@ -1,0 +1,59 @@
+//Lager en array med en en rekke ord som kan brukes i spillet
+let ordListe = [
+    "informasjonsteknologi",
+    "kommunikasjon",
+    "programmering",
+    "utvikling",
+    "algoritme",
+    "datastruktur",
+    "nettverk",
+    "database",
+    "mobilapplikasjon",
+    "kryptografi",
+    "responsivt design",
+    "skytjenester",
+    "maskinlæring",
+    "kunstig intelligens",
+    "feilsøking",
+    "grensesnitt",
+    "prosessering",
+    "protokoll",
+    "kompilator",
+    "virtuell virkelighet",
+    "maskinvare",
+    "programvare",
+    "operativsystem",
+    "sikkerhet",
+    "autentisering",
+    "kodingsstandard",
+    "testing",
+    "agil utvikling",
+    "objektorientert",
+    "funksjonell programmering",
+    "webutvikling",
+    "frontend",
+    "backend",
+    "rammeverk",
+    "versjonskontroll",
+    "integrering",
+    "api",
+    "server",
+    "brukergrensesnitt",
+    "responsivt design",
+    "DOM",
+    "DNS",
+    "HTTP",
+    "HTTPS",
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Python",
+    "Java"
+  ];
+
+
+let answer = "magnus";
+
+let chosenLetter = "c";
+
+console.log(answer.indexOf(chosenLetter));

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hang man</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,100&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="Hangman.css">
+  </head>
+  <body>
+    <div id="startSide">
+      <button id="spillHangMan" onclick="visHangman()">
+        <span></span>Spill Hangman
+      </button>
+    </div>
+    <div id="main" class="hidden">
+      <div id="livOversikt">
+        <p>Du har <span id="livIgjen">6</span> liv igjen.</p>
+      </div>
+      <!--I neste følgende div lages tastaturet.
+      Når knappene klikkes kjøres funkjsonen haanterGjett 
+      med parameter tilsvarene den bokstaven man klikket.-->
+      <div id="tastatur">
+        <button id="btnIndexa" onclick="haandterGjett('a')">A</button>
+        <button id="btnIndexb" onclick="haandterGjett('b')">B</button>
+        <button id="btnIndexc" onclick="haandterGjett('c')">C</button>
+        <button id="btnIndexd" onclick="haandterGjett('d')">D</button>
+        <button id="btnIndexe" onclick="haandterGjett('e')">E</button>
+        <button id="btnIndexf" onclick="haandterGjett('f')">F</button>
+        <button id="btnIndexg" onclick="haandterGjett('g')">G</button>
+        <button id="btnIndexh" onclick="haandterGjett('h')">H</button>
+        <button id="btnIndexi" onclick="haandterGjett('i')">I</button>
+        <button id="btnIndexj" onclick="haandterGjett('j')">J</button>
+        <button id="btnIndexk" onclick="haandterGjett('k')">K</button>
+        <button id="btnIndexl" onclick="haandterGjett('l')">L</button>
+        <button id="btnIndexm" onclick="haandterGjett('m')">M</button>
+        <button id="btnIndexn" onclick="haandterGjett('n')">N</button>
+        <button id="btnIndexo" onclick="haandterGjett('o')">O</button>
+        <button id="btnIndexp" onclick="haandterGjett('p')">P</button>
+        <button id="btnIndexq" onclick="haandterGjett('q')">Q</button>
+        <button id="btnIndexr" onclick="haandterGjett('r')">R</button>
+        <button id="btnIndexs" onclick="haandterGjett('s')">S</button>
+        <button id="btnIndext" onclick="haandterGjett('t')">T</button>
+        <button id="btnIndexu" onclick="haandterGjett('u')">U</button>
+        <button id="btnIndexv" onclick="haandterGjett('v')">V</button>
+        <button id="btnIndexw" onclick="haandterGjett('w')">W</button>
+        <button id="btnIndexx" onclick="haandterGjett('x')">X</button>
+        <button id="btnIndexy" onclick="haandterGjett('y')">Y</button>
+        <button id="btnIndexz" onclick="haandterGjett('z')">Z</button>
+      </div>
+      <div>
+        <p id="respons"></p>
+      </div>
+      <div>
+        <img id="bilde" src="./BilderKule/hangman0.png" alt="hangmanbilde">
+      </div>
+      <div>
+        <p id="ordPlass"></p>
+      </div>
+      <div>
+        <button id="nyttSpillKnapp" onclick="startPaaNytt()">
+          Start på nytt
+        </button>
+        <button id="btnHint" onmouseover="giHint()">Hint</button>
+      </div>
+      <div id="hintMenu" class="popup-menu"></div>
+    </div>
+    <script src="Hangman2.js"></script>
+  </body>
+</html>

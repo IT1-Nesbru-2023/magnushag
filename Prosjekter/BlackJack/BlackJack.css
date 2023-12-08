@@ -66,24 +66,19 @@ body {
   font-size: 20px;
 }
 #spill {
-  height: 200px;
-  width: 10%;
-  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
 }
-#spill a button {
-  padding: 1.5vw;
-  font-size: 1.5vw;
-  margin-top: 1.5vw;
-  background-color: white;
+#spill a {
   color: black;
-  border: 4px solid #04aa6d;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-size: 30px;
+
 }
-#spill a button:hover {
+#spill a:hover {
   color: #04aa6d;
 }
-#spill a button:active {
+#spill a:active {
   color: white;
 }
 /*Dropdawn - menyen*/
