@@ -12,15 +12,21 @@
   </head>
   <body>
     <div id="startSide">
-      <button id="spillHangMan" onclick="visHangman()">
+      <button id="spillHangMan" onclick="visKategori()">
         <span></span>Spill Hangman
       </button>
+    </div>
+    <div id="kategori" class="gjemt">
+      <h1>Vennligst velg en kategori:</h1>
+      <button id="it" onclick="visHangman(); tilfeldigOrd('it')"><span></span>IT &#128187;</button>
+      <button id="frukt" onclick="visHangman(); tilfeldigOrd('frukt')"><span></span>Frukter &#127820;</button>
+      <button id="bil" onclick="visHangman(); tilfeldigOrd('bil')"><span></span>Bilmerker &#128663;</button>
     </div>
     <div id="main" class="hidden">
       <div id="livOversikt">
         <p>Du har <span id="livIgjen">6</span> liv igjen.</p>
       </div>
-      <!--I neste følgende div lages tastaturet.
+      <!--I følgende div lages tastaturet.
       Når knappene klikkes kjøres funkjsonen haanterGjett 
       med parameter tilsvarene den bokstaven man klikket.-->
       <div id="tastatur">
@@ -64,9 +70,10 @@
         <button id="nyttSpillKnapp" onclick="startPaaNytt()">
           Start på nytt
         </button>
-        <button id="btnHint" onmouseover="giHint()">Hint</button>
+        <button id="btnHint" onmouseover="giHint()">Hint (OBS: koster et liv)</button>
       </div>
       <div id="hintMenu" class="popup-menu"></div>
+      <div id="historikk">Seiere: <span id="antallSeiere">0</span> <br> Tap: <span id="antallTap">0</span></div>
     </div>
     <script src="Hangman2.js"></script>
   </body>

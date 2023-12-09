@@ -12,6 +12,10 @@ body {
   display: none;
 }
 
+.gjemt {
+  display: none;
+}
+
 #startSide {
   display: flex;
   justify-content: center;
@@ -23,7 +27,8 @@ body {
   margin-right: 5px; /* Legg til litt mellomrom mellom elementene hvis ønskelig */
 }
 
-#spillHangMan {
+#spillHangMan,
+#kategori button {
   border-bottom-left-radius: 3px;
   border-top-left-radius: 3px;
   border-top-right-radius: 5px;
@@ -46,7 +51,8 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-#spillHangMan span {
+#spillHangMan span,
+#kategori button span {
   background: #309bde;
   height: 100%;
   width: 0;
@@ -57,16 +63,17 @@ body {
   z-index: -1;
 }
 
-#spillHangMan:hover span {
+#spillHangMan:hover span, 
+#kategori button:hover span {
   width: 100%;
 }
 
 #main {
   line-height: 2;
   width: 50vw;
-  margin: 10vh auto;
+  margin: 5vh auto;
   background-color: #309bde;
-  height: 80vh;
+  height: 85vh;
   border-radius: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -116,7 +123,7 @@ body {
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   height: 3vw;
-  width: 5vw;
+  width: 15vw;
 }
 
 .popup-menu {
@@ -126,19 +133,47 @@ body {
   border: none;
   border-radius: 20px;
   padding: 10px;
-  /* Sentrer pop-up menyen horisontalt og vertikalt */
+  /*Sentrer pop-up menyen horisontalt og vertikalt*/
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 10vw;
   height: 5vw;
   padding-top: 20px;
-
 }
 
 #bilde {
   width: 10vw;
 }
 
+#historikk {
+  margin-top: 20px;
+}
+
+#kategori {
+  margin-top: 100px;
+  line-height: 3;
+}
+
+#it {
+  border-color: #CBC3E3 !important;
+}
+#it span {
+  background-color: #CBC3E3 !important;
+}
+
+#frukt {
+  border-color: #90EE90 !important;
+}
+#frukt span {
+  background-color: #90EE90 !important;
+}
+
+#bil {
+  border-color: #FF474C !important;
+}
+#bil span {
+  background-color: #FF474C !important;
+}
 
 

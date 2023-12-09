@@ -1,11 +1,23 @@
 /*Funksjonen vis Hangman skjuler startknappen og viser resten av innholdet. 
 Kjøres når knappen trykket på (se HTML)*/
-function visHangman() {
+function visKategori() {
   let startSide = document.getElementById("startSide");
-  let main = document.getElementById("main");
+  let kategori = document.getElementById("kategori");
 
   // Fjern knappen
   startSide.style.display = "none";
+
+  // Vis skjulte elementer
+  kategori.style.display = "block";
+  kategori.classList.remove("hidden");
+}
+
+function visHangman() {
+  let kategori = document.getElementById("kategori");
+  let main = document.getElementById("main");
+
+  // Fjern knappen
+  kategori.style.display = "none";
 
   // Vis skjulte elementer
   main.style.display = "block";
@@ -13,7 +25,7 @@ function visHangman() {
 }
 
 /*Lager en array av ord som kan brukes i spillet*/
-let ordArray = [
+let itArray = [
   "informasjonsteknologi",
   "kommunikasjon",
   "programmering",
@@ -54,16 +66,110 @@ let ordArray = [
   "java",
 ];
 
+let fruktArray = [
+  "eple",
+  "banan",
+  "appelsin",
+  "jordbær",
+  "melon",
+  "drue",
+  "ananas",
+  "fersken",
+  "plomme",
+  "mango",
+  "sitron",
+  "avokado",
+  "granateple",
+  "vannmelon",
+  "kiwi",
+  "papaya",
+  "fersken",
+  "aprikos",
+  "lime",
+  "guava",
+  "passjonsfrukt",
+  "apelsin",
+  "kiwi",
+  "ananas",
+  "banan",
+  "mango",
+];
+
+let bilmerkerArray = [
+  "toyota",
+  "ford",
+  "chevrolet",
+  "honda",
+  "bmw",
+  "audi",
+  "volkswagen",
+  "tesla",
+  "mercedes",
+  "nissan",
+  "hyundai",
+  "volvo",
+  "kia",
+  "mazda",
+  "subaru",
+  "lexus",
+  "jaguar",
+  "porsche",
+  "ferrari",
+  "lamborghini",
+  "maserati",
+  "bugatti",
+  "jeep",
+  "ram",
+  "chrysler",
+  "dodge",
+  "buick",
+  "cadillac",
+  "chevrolet",
+  "lincoln",
+  "acura",
+  "infiniti",
+  "fiat",
+  "mini",
+  "smart",
+];
+
 //Definerer noen globale variabler
 let svar = "";
 let antallFeil = 0;
 let gjettet = [];
 let ordStatus = null;
+let antallSeiere = 0;
+let antallTap = 0;
+let valgtKategori;
 
 /*Funksjonen tilfeldigOrd bruker de innebygede funksjone math.floor og 
-math.random til å plukke et tilfeldig ord fra ordArray.*/
-function tilfeldigOrd() {
-  svar = ordArray[Math.floor(Math.random() * (ordArray.length + 1))]; //Når vi bruker math.floor framfror math.ceil må vi legge til 1 for å få med alle elementene av arrayen
+math.random til å plukke et tilfeldig ord fra en av arrayene.*/
+function tilfeldigOrd(kategori) {
+  if (kategori === "it") {
+    svar = itArray[Math.floor(Math.random() * itArray.length)];
+    valgtKategori = "it";
+  } else if (kategori === "frukt") {
+    svar = fruktArray[Math.floor(Math.random() * fruktArray.length)];
+    valgtKategori = "frukt";
+  } else if (kategori === "bil") {
+    svar = bilmerkerArray[Math.floor(Math.random() * bilmerkerArray.length)];
+    valgtKategori = "bil";
+  }
+  gjettetOrd();
+  endreBakgrunnsfarge(kategori);
+}
+
+/*Funksjonen endreBakgrunnsfarge endrer bakgrunnsfargen avhengig av hvilkan kategori man valgte */
+function endreBakgrunnsfarge(kategori) {
+  let mainElement = document.getElementById("main");
+
+  if (kategori === "it") {
+    mainElement.style.backgroundColor = "#CBC3E3";
+  } else if (kategori === "frukt") {
+    mainElement.style.backgroundColor = "#90EE90";
+  } else if (kategori === "bil") {
+    mainElement.style.backgroundColor = "#FF474C";
+  }
 }
 
 /*Funksjonen haanterGjett kjøres hver gang en knapp blir trykket på, og har 
@@ -122,6 +228,8 @@ Om vedkommende har gjort det sendes responsen "Du vant!" */
 function erSpillVunnet() {
   if (ordStatus === svar) {
     document.getElementById("respons").innerHTML = "Du vant!";
+    antallSeiere++;
+    document.getElementById("antallSeiere").innerHTML = antallSeiere;
   }
 }
 
@@ -132,6 +240,8 @@ function erSpillTapt() {
     document.getElementById("ordPlass").innerHTML =
       "Det riktige ordet var " + svar;
     document.getElementById("respons").innerHTML = "Du tapte!";
+    antallTap++;
+    document.getElementById("antallTap").innerHTML = antallTap;
   }
 }
 
@@ -154,7 +264,7 @@ function startPaaNytt() {
   });
 
   //Med følgende funksjoner startes et nytt spill
-  tilfeldigOrd();
+  tilfeldigOrd(valgtKategori);
   gjettetOrd();
 
   document.getElementById("respons").innerHTML = "";
@@ -164,21 +274,22 @@ function startPaaNytt() {
 /*Følgende funksjon viser en tilveldig bokstav i svaret når musepekeren er over "hint"-knappen*/
 function giHint() {
   let svarArray = svar.split(""); //Lager en Array med hver av bokstavene i svaret
-  let tilfeldigIndex = Math.floor(Math.random() * svarArray.length);  
-  let hintBokstav = svarArray[tilfeldigIndex];  
+  let tilfeldigIndex = Math.floor(Math.random() * svarArray.length);
+  let hintBokstav = svarArray[tilfeldigIndex];
 
   //Setter innholdet i pop-up menyen
-  document.getElementById("hintMenu").innerHTML = "Svaret inneholder bokstaven: " + hintBokstav;
+  document.getElementById("hintMenu").innerHTML =
+    "Svaret inneholder bokstaven: " + hintBokstav;
 
   //Viser pop-up meny
   hintMenu.style.display = "block";
+
+  antallFeil++
+  oppdaterAntallFeil()
+  erSpillTapt()
 }
 
 //Skjuler pop-up meny når musen forlater hint-knappen
 document.getElementById("btnHint").onmouseout = function () {
   document.getElementById("hintMenu").style.display = "none";
 };
-
-//Funksjone som starter spillet
-tilfeldigOrd();
-gjettetOrd();
