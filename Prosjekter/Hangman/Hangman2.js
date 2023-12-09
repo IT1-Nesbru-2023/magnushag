@@ -97,7 +97,7 @@ function gjettetOrd() {
   ordStatus = svar
     .split("") //Lager en array av svaret (hvis svaret er "html" ville svar.split("") gitt ["h", "t", "m", "l"])
     .map(function (bokstav) {
-      //Med .map(...) lages en ny array. Her plasseres bokstavene som er gjettet på riktig tred i ordet og ordene som ikke er gjettet ennå blir markert med en understrek (_)
+      //Med .map(...) lages en ny array. Her plasseres bokstavene som er gjettet på riktig sted i ordet og ordene som ikke er gjettet ennå blir markert med en understrek (_)
       if (gjettet.includes(bokstav)) {
         return bokstav;
       } else {
@@ -106,7 +106,7 @@ function gjettetOrd() {
     })
     .join(""); //invers operajon av split (den nye arrayen samles til en ny string)
 
-  //Oppdater HTML-elementet med ID "ordPlass" med den oppdatert stringen
+  //Oppdater HTML-elementet med ID "ordPlass" med den oppdaterte stringen
   document.getElementById("ordPlass").innerHTML = ordStatus;
 }
 
@@ -161,21 +161,21 @@ function startPaaNytt() {
   document.getElementById("livIgjen").innerHTML = "6";
 }
 
+/*Følgende funksjon viser en tilveldig bokstav i svaret når musepekeren er over "hint"-knappen*/
 function giHint() {
-  let svarArray = svar.split("");
-  let randomIndex = Math.floor(Math.random() * svarArray.length);
-  let hintLetter = svarArray[randomIndex];
+  let svarArray = svar.split(""); //Lager en Array med hver av bokstavene i svaret
+  let tilfeldigIndex = Math.floor(Math.random() * svarArray.length);  
+  let hintBokstav = svarArray[tilfeldigIndex];  
 
-  // Sett innholdet i pop-up menyen
-  let hintMenu = document.getElementById("hintMenu");
-  hintMenu.innerHTML = "Svaret inneholder bokstaven: " + hintLetter;
+  //Setter innholdet i pop-up menyen
+  document.getElementById("hintMenu").innerHTML = "Svaret inneholder bokstaven: " + hintBokstav;
 
-  // Vis pop-up meny
+  //Viser pop-up meny
   hintMenu.style.display = "block";
 }
 
-// Skjul pop-up meny når musen forlater hint-knappen
-document.getElementById("btnHint").onmouseout = function() {
+//Skjuler pop-up meny når musen forlater hint-knappen
+document.getElementById("btnHint").onmouseout = function () {
   document.getElementById("hintMenu").style.display = "none";
 };
 
