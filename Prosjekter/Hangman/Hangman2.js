@@ -287,6 +287,7 @@ function giHint() {
   antallFeil++
   oppdaterAntallFeil()
   erSpillTapt()
+  nyttBilde()
 }
 
 //Skjuler pop-up meny når musen forlater hint-knappen
