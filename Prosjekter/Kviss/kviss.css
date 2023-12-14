@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+#forside {
+  margin-top: 20vh;
+  text-align: center;
+}
+#forside button {
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-style: solid;
+  border-color: #309bde;
+  border-width: 0 0 0 5px;
+  font-size: 20px;
+  position: relative;
+  width: 30vw;
+  padding: 35px 0;
+  text-align: center;
+  margin: 40px 10px;
+  font-weight: bold;
+  background: transparent;
+  color: #000;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 0;
+}
+#forside span {
+  background: #309bde;
+  height: 100%;
+  width: 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transition: 0.5s;
+  z-index: -1;
+}
+#forside button:hover span {
+  width: 100%;
+}
+.hidden {
+  display: none;
+}
+.sporsmaal {
+  text-align: center;
+  margin-top: 5vh;
+  line-height: 2;
+}
+#respons {
+  color: green;
+}
+#nesteSporsmaal1 {
+  width: 100px;
+  margin: 50px auto;
+}
+#respons2 {
+  color: green;
+}
+#nesteSporsmaal2 {
+  width: 100px;
+  margin: 50px auto;
+}

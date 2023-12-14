@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kviss</title>
+    <link rel="stylesheet" href="kviss.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,100&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="forside">
+      <h1>Velkommen til kviss!</h1>
+      <button onclick="visKviss()"><span></span>Trykk her for å starte</button>
+    </div>
+    <div id="sporsmaal1" class="sporsmaal hidden">
+      <h2>Hva er det mest brukte programmeringspråket?</h2>
+      <input
+        onchange="sjekkSvar1()"
+        type="text"
+        id="svar1"
+        placeholder="Skriv svaret her"
+      />
+      <h3>Svartalternativer</h3>
+      <p>1. Python</p>
+      <p>2. Javascript</p>
+      <p>3. C++</p>
+      <h3 id="respons"></h3>
+      <button id="nesteSporsmaal1" class="hidden" onclick="tilSporsmaalTo()">Neste spørsmål</button>
+    </div>
+    <div id="sporsmaal2" class="sporsmaal hidden">
+      <h2>Hva er "Boolean" i programmering?</h2>
+      <input
+        onchange="sjekkSvar2()"
+        type="text"
+        id="svar2"
+        placeholder="Skriv svaret her"
+      />
+      <h3>Svartalternativer</h3>
+      <p>1. En datatype som representerer logiske verdier som sant eller falskt</p>
+      <p>2. En metode for å organisere og strukturere kodeblokker</p>
+      <p>3. En enhet som håndterer inndata og utdata i et dataprogram</p>
+      <h3 id="respons2"></h3>
+      <button id="nesteSporsmaal2" class="hidden" onclick="tilSporsmaalTre()">Neste spørsmål</button>
+    </div>
+    <script src="kviss.js"></script>
+  </body>
+</html>
