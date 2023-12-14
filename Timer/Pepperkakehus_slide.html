@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pepperkakehus</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,100&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        font-family: "Roboto", sans-serif;
+        text-align: center;
+      }
+      h1 {
+        margin-top: 2vh;
+      }
+      img {
+        width: 20vw;
+        margin: 5vh;
+      }
+      button {
+        margin-top: 1vh;
+      }
+      .slidecontainer {
+        width: 70vw;
+        margin: 0 auto;
+      }
+      .slider {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 100%;
+        height: 25px;
+        background: #d3d3d3;
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: 0.2s;
+        transition: opacity 0.2s;
+        border-radius: 10px;
+      }
+      #hvilketBilde {
+        margin-top: 4vh;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Pepperkakehuset</h1>
+    <img
+      id="imgBilde"
+      src="https://helull.github.io/bilder/pepperkakehus/hus1.jpg"
+      alt="pepperkakehus"
+    />
+    <br />
+    <div class="slidecontainer">
+      <input
+        onchange="visBilde(this.value); visNummer(this.value)"
+        type="range"
+        min="1"
+        max="15"
+        value="1"
+        class="slider"
+      />
+    </div>
+    <div id="hvilketBilde">
+      <h2>Bilde <span id="bildeNummer">1</span></h2>
+    </div>
+    <script src="Pepperkakehus_slide.js"></script>
+  </body>
+</html>
