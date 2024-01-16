@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bursar</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+      }
+      #overskrift {
+        background-color: #3498db;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        font-size: 50px;
+        font-weight: bold;
+        height: 110px;
+        padding-top: 50px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        font-size: 20px;
+      }
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+      }
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+      .hover:hover {
+        background-color: #e0e0e0;
+      }
+      #terning {
+        text-align: center;
+        width: 50%;
+        margin: 50px auto;
+      }
+      #terning button {
+        margin: 50px;
+        display: inline-block;
+        outline: 0;
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+        border-radius: 4px;
+        font-size: 13px;
+        height: 30px;
+        background-color: #3498db;
+        color: white;
+        padding: 0 20px;
+      }
+      #terning button:hover {
+        transform: scale(0.95);
+      }
+      #terning button:active {
+        color: #3498db;
+      }
+      img {
+        width: 100px;
+      }
+      #resultat {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="overskrift">Bursar</div>
+    <table>
+      <tr>
+        <td class="hover" onclick="sum(3, tall1, tall2, tall3)">3</td>
+        <td id="tre"></td>
+      </tr>
+      <tr>
+        <td class="hover" onclick="sum(4, tall1, tall2, tall3)">4</td>
+        <td id="fire"></td>
+      </tr>
+      <tr>
+        <td class="hover" onclick="sum(5, tall1, tall2, tall3)">5</td>
+        <td id="fem"></td>
+      </tr>
+      <tr>
+        <td class="hover" onclick="sum(6, tall1, tall2, tall3)">6</td>
+        <td id="seks"></td>
+      </tr>
+      <tr>
+        <td class="hover" onclick="sum(7, tall1, tall2, tall3)">7</td>
+        <td id="syv"></td>
+      </tr>
+      <tr>
+        <td class="hover" onclick="sum(8, tall1, tall2, tall3)">8</td>
+        <td id="otte"></td>
+      </tr>
+    </table>
+    <div id="terning">
+      <button onclick="rullTerning()">Trykk for å trille</button>
+      <br />
+      <img id="terning1" src="terniger/dice-1.png" />
+      <img id="terning2" src="terniger/dice-1.png" />
+      <img id="terning3" src="terniger/dice-1.png" />
+    </div>
+    <div id="resultat"></div>
+    <script>
+      let terningerRullet = false;
+
+      function rullTerning() {
+        if (!terningerRullet) {
+          tall1 = Math.floor(Math.random() * 6) + 1;
+          tall2 = Math.floor(Math.random() * 6) + 1;
+          tall3 = Math.floor(Math.random() * 6) + 1;
+
+          document.getElementById("terning1").src =
+            "./terniger/dice-" + tall1 + ".png";
+          document.getElementById("terning2").src =
+            "./terniger/dice-" + tall2 + ".png";
+          document.getElementById("terning3").src =
+            "./terniger/dice-" + tall3 + ".png";
+
+          let resultElement = document.getElementById("resultat");
+          resultElement.innerHTML =
+            "Terning 1: " +
+            tall1 +
+            "<br>Terning 2: " +
+            tall2 +
+            "<br>Terning 3: " +
+            tall3;
+
+          terningerRullet = true;
+        }
+      }
+      document
+        .getElementById("tre")
+        .addEventListener("click", () => sum(3, tall1, tall2, tall3));
+      document
+        .getElementById("fire")
+        .addEventListener("click", () => sum(4, tall1, tall2, tall3));
+      document
+        .getElementById("fem")
+        .addEventListener("click", () => sum(5, tall1, tall2, tall3));
+      document
+        .getElementById("seks")
+        .addEventListener("click", () => sum(6, tall1, tall2, tall3));
+      document
+        .getElementById("syv")
+        .addEventListener("click", () => sum(7, tall1, tall2, tall3));
+      document
+        .getElementById("otte")
+        .addEventListener("click", () => plasserSum(8, tall1, tall2, tall3));
+
+
+      function sum(mult, tall1, tall2, tall3) {
+        if (terningerRullet) {
+          if (mult == 3) {
+            document.getElementById("tre").innerHTML =
+              mult * (tall1 + tall2 + tall3);
+          } else if (mult == 4) {
+            document.getElementById("fire").innerHTML =
+              mult * (tall1 + tall2 + tall3);
+          } else if (mult == 5) {
+            document.getElementById(elementId).innerHTML =
+              mult * (tall1 + tall2 + tall3);
+          } else if (mult == 6) {
+            document.getElementById("seks").innerHTML =
+              mult * (tall1 + tall2 + tall3);
+          } else if (mult == 7) {
+            document.getElementById("syv").innerHTML =
+              mult * (tall1 + tall2 + tall3);
+          } else if (mult == 8) {
+            document.getElementById("otte").innerHTML =
+              mult * (tall1 + tall2 + tall3);
+          }
+          terningerRullet = false; 
+        }
+      }
+    </script>
+  </body>
+</html>
