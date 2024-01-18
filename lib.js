@@ -4,6 +4,7 @@
 let array = [];
 
 function randomRange(t1, t2) {
+    console.log("Laget av Magnus Hægh");
     let i = t1;
     while (i <= t2) {
         array.push(i)
@@ -13,4 +14,3 @@ function randomRange(t1, t2) {
     return randomNumber;
 }
 
-console.log("Laget av Magnus Hægh");
