@@ -13,3 +13,4 @@ function randomRange(t1, t2) {
     return randomNumber;
 }
 
+console.log("Laget av Magnus Hægh");
