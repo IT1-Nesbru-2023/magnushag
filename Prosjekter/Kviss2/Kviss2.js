@@ -5,9 +5,10 @@ let hvilketSpm = 0;
 
 let spm1 = { spm: "Hva heter Norges høyeste fjell?", svar: "Galdhøpiggen" };
 let spm2 = { spm: "Hvor høy er Magnus?", svar: "190" };
-let spm3 = { spm: "Hvem er presidenten av Brazil? (Etternavn)", svar: "Silva" };
+let spm3 = { spm: "Hvem er presidenten i Brazil? (Etternavn)", svar: "Silva" };
 let spm4 = { spm: "Hva er hovedstaden i Etiopia", svar: "Addis Abeba" };
-let spmArray = [spm1, spm2, spm3, spm4];
+let spm5 = { spm: "Når ble Nesbru vgs grunnlagt", svar: "1980" };
+let spmArray = [spm1, spm2, spm3, spm4, spm5];
 
 let tilfeldigRespons = [
   "Riktig!",
@@ -30,20 +31,38 @@ function sjekkSvar() {
   }
 }
 
+document.getElementById("forrigeSpm").style.display = "none";
+
 function nesteSpm() {
   hvilketSpm++;
-  if (hvilketSpm == 4) {
-    document.getElementById("nesteSpm").disabled = true;
-  } else {
-    document.getElementById("spm").innerHTML = spmArray[hvilketSpm].spm;
-    document.getElementById("inpSvar").value = "";
-    document.getElementById("spmNr").innerHTML = hvilketSpm + 1;
-  }
+  document.getElementById("bilde").src = "Bilde-"+ (hvilketSpm + 1)  + ".jpg";
+  oppdaterSporsmal();
 }
 
 function forrigeSpm() {
-  hvilketSpm--;
+  if (hvilketSpm > 0) {
+    hvilketSpm--;
+    oppdaterSporsmal();
+    document.getElementById("bilde").src = "Bilde-"+ (hvilketSpm + 1)  + ".jpg";
+  }
+}
+
+function oppdaterSporsmal() {
   document.getElementById("spm").innerHTML = spmArray[hvilketSpm].spm;
   document.getElementById("inpSvar").value = "";
+  document.getElementById("respons").innerHTML = "";
   document.getElementById("spmNr").innerHTML = hvilketSpm + 1;
+
+  if (hvilketSpm === 0) {
+    document.getElementById("forrigeSpm").style.display = "none";
+  } else {
+    document.getElementById("forrigeSpm").style.display = "inline-block";
+  }
+
+  if (hvilketSpm === spmArray.length - 1) {
+    document.getElementById("nesteSpm").style.display = "none";
+  } else {
+    document.getElementById("nesteSpm").style.display = "inline-block";
+  }
 }
+
