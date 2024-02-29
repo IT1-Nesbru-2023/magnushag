@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monty Hall</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f0f0f0;
+        text-align: center;
+      }
+
+      h1 {
+        color: #333;
+      }
+
+      h3 {
+        color: #555;
+      }
+
+      img {
+        width: 200px;
+        margin: 10px;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      img:hover {
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Monty Hall</h1>
+    <h3>Hvilken dør vil du velge?</h3>
+    <img id="dor1" src="Bilder_Monty_Hall/dor_1_stor.png" />
+    <img id="dor2" src="Bilder_Monty_Hall/dor_2_stor.png" />
+    <img id="dor3" src="Bilder_Monty_Hall/dor_3_stor.png" />
+
+    <script>
+      let dor1 = document.getElementById("dor1");
+      let dor2 = document.getElementById("dor2");
+      let dor3 = document.getElementById("dor3");
+
+      dor1.addEventListener("click", opneDor1);
+      dor2.addEventListener("click", opneDor2);
+      dor3.addEventListener("click", opneDor3);
+
+      let brukteTall = [];
+      let geitEllerBil = ["geit", "geit", "bil"];
+
+      function genererTilfeldigTall() {
+        let tilfeldigTall;
+        do {
+          tilfeldigTall = Math.floor(Math.random() * 3);
+        } while (brukteTall.includes(tilfeldigTall));
+
+        brukteTall.push(tilfeldigTall);
+        return tilfeldigTall;
+      }
+
+      function opneDor1() {
+        let tilfeldig = genererTilfeldigTall();
+        dor1.src = "Bilder_Monty_Hall/" + geitEllerBil[tilfeldig] + "_stor.png";
+      }
+
+      function opneDor2() {
+        let tilfeldig = genererTilfeldigTall();
+        dor2.src = "Bilder_Monty_Hall/" + geitEllerBil[tilfeldig] + "_stor.png";
+      }
+
+      function opneDor3() {
+        let tilfeldig = genererTilfeldigTall();
+        dor3.src = "Bilder_Monty_Hall/" + geitEllerBil[tilfeldig] + "_stor.png";
+      }
+    </script>
+  </body>
+</html>
