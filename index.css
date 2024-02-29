@@ -18,12 +18,11 @@ html {
 }
 .sidebar a {
   color: #fff;
-  padding: 10px 15px 10px 16px;
+  padding: 1px 10px 1px 10px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 15px;
   display: block;
   line-height: 2;
-  font-size: 20px;
 }
 .sidebar a:hover {
   background: #226f9e;
@@ -112,12 +111,11 @@ button:hover span {
 #uke44,
 #uke45,
 #uke46,
-#uke47,
-#uke48,
 #uke49,
 #uke50,
 #uke3,
-#uke4 {
+#uke4,
+#uke9 {
   margin-top: 100px;
 }
 
