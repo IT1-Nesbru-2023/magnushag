@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visittkortgenerator</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,100&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    body {
+      position: relative;
+      font-family: "Roboto", sans-serif;
+    }
+    #overskrift {
+      font-size: 20px;
+      text-align: center;
+    }
+
+    #dataDiv {
+      border: solid white 3px;
+      width: 300px;
+      margin-left: 250px;
+    }
+
+    label {
+      font-size: 15px;
+      color: black;
+      font-weight: bold;
+    }
+
+    h3 {
+      font-size: 17px;
+      text-decoration: underline;
+    }
+
+    button {
+      display: inline-block;
+      outline: none;
+      cursor: pointer;
+      font-weight: 500;
+      border: 1px solid black;
+      margin: 2px;
+      margin-left: 5px;
+      border-radius: 2px;
+      height: 30px;
+      line-height: 30px;
+      font-size: 12px;
+      color: #241c15;
+      background-color: #efeeea;
+      transition: background-color 0.2s ease-in-out 0s,
+        opacity 0.2s ease-in-out 0s;
+      padding: 0 18px;
+    }
+
+    button:hover {
+      background-color: darkgray;
+    }
+
+    button:active {
+      background-color: white;
+    }
+
+    #kort {
+      position: absolute;
+      top: 50%;
+      left: 70%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 400px;
+      background-color: lightblue;
+      border: solid black 3px;
+    }
+
+    #kort-navn {
+      position: absolute;
+      left: 35%;
+      top: 5%;
+      font-size: 40px;
+    }
+
+    #kort-navn:hover,
+    #kort-kjonn:hover,
+    #kort-stilling:hover,
+    #kort-adresse:hover,
+    #kort-telefonnummer:hover,
+    #kort-email:hover,
+    #kort-dato:hover {
+      border: 1px black solid;
+      cursor: pointer;
+    }
+
+    #kort-kjonn {
+      position: absolute;
+      left: 20%;
+      top: 25%;
+      font-size: 20px;
+    }
+
+    #kort-stilling {
+      position: absolute;
+      left: 65%;
+      top: 25%;
+      font-size: 20px;
+    }
+
+    #kort-adresse {
+      position: absolute;
+      left: 40%;
+      top: 50%;
+      font-size: 20px;
+    }
+
+    #kort-telefonnummer {
+      position: absolute;
+      left: 30%;
+      top: 70%;
+      font-size: 20px;
+    }
+
+    #kort-email {
+      position: absolute;
+      left: 60%;
+      top: 70%;
+      font-size: 20px;
+    }
+
+    #kort-dato {
+      position: absolute;
+      left: 42%;
+      top: 85%;
+      font-size: 20px;
+    }
+
+    #kort > img {
+      position: inherit;
+    }
+
+    #heltrukket {
+      text-decoration: underline;
+    }
+
+    #stiplet {
+      text-decoration: underline;
+      text-decoration-style: dotted;
+    }
+
+    #dobbel {
+      text-decoration: underline;
+      text-decoration-style: double;
+    }
+
+    #skrift1 {
+      font-family: "Courier New", Courier, monospace;
+    }
+
+    #skrift2 {
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    #skrift3 {
+      font-family: "Times New Roman", Times, serif;
+    }
+
+    #tips {
+      text-align: center;
+      margin-top: 50px;
+    }
+  </style>
+  <body>
+    <div id="overskrift">
+      <h1>Visittkortgenerator</h1>
+    </div>
+    <div id="dataDiv">
+      <div>
+        <h3>Informasjon:</h3>
+        <label for="navn">Navn:</label>
+        <input
+          name="navn"
+          id="navnInp"
+          type="text"
+          onkeyup="oppdater('navn')"
+        />
+      </div>
+      <div>
+        <label for="kjonn">Kjønn:</label>
+        <select name="kjonn" id="kjonnInp" onmouseup="oppdater('kjonn')">
+          <option value="Mann">Mann</option>
+          <option value="Dame">Dame</option>
+          <option value="Annet">Annet</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="stilling">Stilling</label>
+        <input
+          name="stilling"
+          id="stillingInp"
+          type="text"
+          onkeyup="oppdater('stilling')"
+        />
+      </div>
+
+      <div>
+        <label for="adresse">Adresse:</label>
+        <input
+          name="adresse"
+          id="adresseInp"
+          type="text"
+          onkeyup="oppdater('adresse')"
+        />
+      </div>
+
+      <div>
+        <label for="telefonnummer">Telefonnummer:</label>
+        <input
+          name="telefonnummer"
+          id="telefonnummerInp"
+          type="tel"
+          onkeyup="oppdater('telefonnummer')"
+        />
+      </div>
+
+      <div>
+        <label for="email">Email:</label>
+        <input
+          name="email"
+          id="emailInp"
+          type="email"
+          onkeyup="oppdater('email')"
+        />
+      </div>
+
+      <div>
+        <label for="dato">Dato:</label>
+        <input
+          name="dato"
+          id="datoInp"
+          type="date"
+          onkeyup="oppdater('dato')"
+        />
+      </div>
+
+      <div>
+        <h3>Stil:</h3>
+        <label for="bakgrunnsfarge">Bakgrunnsfarge:</label>
+        <input name="bakgrunnsfarge" id="bakgrunnsfargeInp" type="color" />
+      </div>
+
+      <div>
+        <label for="tekstfarge">Tekstfarge:</label>
+        <input name="tekstfarge" id="tekstfargeInp" type="color" />
+      </div>
+
+      <div>
+        <label for="kantfarge">Kantfarge:</label>
+        <input name="kantfarge" id="kantfargeInp" type="color" />
+      </div>
+
+      <div>
+        <label for="kanttype">Kanttype:</label>
+        <div id="kanttypeDiv">
+          <input type="radio" id="kanttype1" name="kanttype" value="solid" />
+          <label for="kanttype1"><span id="heltrukket">Heltrukket</span></label>
+          <br />
+          <input type="radio" id="kanttype2" name="kanttype" value="dotted" />
+          <label for="kanttype2"><span id="stiplet">Stiplet</span></label>
+          <br />
+          <input type="radio" id="kanttype3" name="kanttype" value="double" />
+          <label for="kanttype3"><span id="dobbel">Dobbel</span></label>
+        </div>
+      </div>
+
+      <div>
+        <label for="skrifttype">Skrifttype:</label>
+        <div id="skrifttypeDiv">
+          <input
+            type="radio"
+            id="type1"
+            name="skrifttype"
+            value="'Courier New', Courier, monospace"
+          />
+          <label for="type1"
+            ><span id="skrift1">'Courier New', Courier</span></label
+          >
+          <br />
+          <input
+            type="radio"
+            id="type2"
+            name="skrifttype"
+            value="Verdana, Geneva, Tahoma, sans-serif"
+          />
+          <label for="type2"
+            ><span id="skrift2">Verdana, Geneva, sans-serif</span></label
+          >
+          <br />
+          <input
+            type="radio"
+            id="type3"
+            name="skrifttype"
+            value="'Times New Roman', Times, serif"
+          />
+          <label for="type3"><span id="skrift3">'Trebuchet MS'</span></label>
+        </div>
+      </div>
+
+      <button style="margin-bottom: 10px" onclick="oppdater('stil')">
+        Lagre stil
+      </button>
+
+      <div>
+        <h3>Bilde:</h3>
+        <input
+          name="bilde"
+          id="bildeInp"
+          type="file"
+          onchange="settInnBilde()"
+        />
+      </div>
+    </div>
+
+    <div id="kort">
+      <div id="kort-navn"></div>
+      <div id="kort-kjonn"></div>
+      <div id="kort-stilling"></div>
+      <div id="kort-adresse"></div>
+      <div id="kort-telefonnummer"></div>
+      <div id="kort-email"></div>
+      <div id="kort-dato"></div>
+      <img src="" id="bilde" width="300px" />
+    </div>
+    <div id="tips">
+      <h4>Tips:</h4>
+      <p>Dra elementene rundt for å skape din helt egen layout!</p>
+    </div>
+    <script>
+      // Definerer variabler
+      let kortNavn = document.getElementById("kort-navn");
+      let kortKjonn = document.getElementById("kort-kjonn");
+      let kortStilling = document.getElementById("kort-stilling");
+      let kortAdresse = document.getElementById("kort-adresse");
+      let kortTelefonnummer = document.getElementById("kort-telefonnummer");
+      let kortEmail = document.getElementById("kort-email");
+      let kortDato = document.getElementById("kort-dato");
+      let inpFilNavn = document.getElementById("bildeInp");
+      let kort = document.getElementById("kort");
+
+      // Funksjonen oppdaterer klientens input fortløpende på kortet
+      function oppdater(element) {
+        if (element == "stil") {
+          kort.style.backgroundColor =
+            document.getElementById("bakgrunnsfargeInp").value;
+          kort.style.color = document.getElementById("tekstfargeInp").value;
+          kort.style.borderColor =
+            document.getElementById("kantfargeInp").value;
+          kort.style.borderWidth = "5px";
+          kort.style.borderStyle = document.getElementById(
+            "kanttype" + displayRadioValue()
+          ).value;
+          kort.style.fontFamily = document.getElementById(
+            "type" + displayRadioValue2()
+          ).value;
+        } else if (element == "navn") {
+          kortNavn.innerHTML = document.getElementById("navnInp").value;
+        } else if (element == "kjonn") {
+          kortKjonn.innerHTML = document.getElementById("kjonnInp").value;
+        } else if (element == "stilling") {
+          kortStilling.innerHTML = document.getElementById("stillingInp").value;
+        } else if (element == "adresse") {
+          kortAdresse.innerHTML = document.getElementById("adresseInp").value;
+        } else if (element == "telefonnummer") {
+          kortTelefonnummer.innerHTML =
+            document.getElementById("telefonnummerInp").value;
+        } else if (element == "email") {
+          kortEmail.innerHTML = document.getElementById("emailInp").value;
+        } else if (element == "dato") {
+          kortDato.innerHTML = document.getElementById("datoInp").value;
+        }
+      }
+
+      // Kjøres når fil-inputen detekterer en endring, "change"
+      function settInnBilde() {
+        bilde.src = URL.createObjectURL(inpFilNavn.files[0]);
+      }
+
+      // Funksjon for å finne hvilken radio-knapp som er trykket på
+      function displayRadioValue() {
+        let element = document.getElementsByName("kanttype");
+
+        for (i = 0; i < element.length; i++) {
+          if (element[i].checked) {
+            return i + 1;
+          }
+        }
+      }
+      function displayRadioValue2() {
+        let element = document.getElementsByName("skrifttype");
+
+        for (j = 0; j < element.length; j++) {
+          if (element[j].checked) {
+            return j + 1;
+          }
+        }
+      }
+
+      // Skrur på dramodus for alle tekstbokser
+      draModus(document.getElementById("kort-navn"));
+      draModus(document.getElementById("kort-kjonn"));
+      draModus(document.getElementById("kort-stilling"));
+      draModus(document.getElementById("kort-adresse"));
+      draModus(document.getElementById("kort-telefonnummer"));
+      draModus(document.getElementById("kort-email"));
+      draModus(document.getElementById("kort-dato"));
+      draModus(document.getElementById("bilde"));
+
+      function draModus(e) {
+        let pos1 = 0;
+        let pos2 = 0;
+        let pos3 = 0;
+        let pos4 = 0;
+
+        e.onmousedown = startDraModus;
+
+        // Funksjonen henter klientens posisjon
+        function startDraModus(event) {
+          pos3 = event.clientX;
+          pos4 = event.clientY;
+          document.onmouseup = draModusAv;
+          document.onmousemove = draElementet;
+        }
+
+        // Klienten kan med denne funksjonen flytte hver tekstboks
+        // Den nye posisjonen blir da lagret som den gamle posisjonen
+        function draElementet(event) {
+          pos1 = pos3 - event.clientX;
+          pos2 = pos4 - event.clientY;
+          pos3 = event.clientX;
+          pos4 = event.clientY;
+          e.style.top = e.offsetTop - pos2 + "px";
+          e.style.left = e.offsetLeft - pos1 + "px";
+        }
+
+        // Modusen skrus av når musen slippes
+        function draModusAv() {
+          document.onmouseup = null;
+          document.onmousemove = null;
+        }
+      }
+    </script>
+  </body>
+</html>
