@@ -176,6 +176,10 @@
     <div id="dataDiv">
       <h3>Informasjon:</h3>
       <div>
+        <label for="navn2">Navn på forhondsbestemte visittkort:</label>
+        <select name="navn2" id="navn2Inp"></select>
+      </div>
+      <div>
         <label for="navn">Navn:</label>
         <input
           name="navn"
@@ -194,7 +198,7 @@
       </div>
 
       <div>
-        <label for="stilling">Stilling</label>
+        <label for="stilling">Stilling:</label>
         <input
           name="stilling"
           id="stillingInp"
@@ -329,12 +333,13 @@
       <div id="kort-telefonnummer"></div>
       <div id="kort-email"></div>
       <div id="kort-dato"></div>
-      <img src="" id="bilde" width="300px" />
+      <img src="" id="bilde" width="600px" height="400px"/>
     </div>
     <div id="tips">
       <h4>Tips:</h4>
       <p>Dra elementene rundt for å skape din helt egen layout!</p>
     </div>
+    <script src="personer.js"></script>
     <script>
       // Definerer variabler
       let kortNavn = document.getElementById("kort-navn");
@@ -346,6 +351,35 @@
       let kortDato = document.getElementById("kort-dato");
       let inpFilNavn = document.getElementById("bildeInp");
       let kort = document.getElementById("kort");
+      let bilde = document.getElementById("bilde");
+
+      document.addEventListener("DOMContentLoaded", navnFunksjon);
+
+      let minListe = document.getElementById("navn2Inp");
+
+      function navnFunksjon() {
+        for (element in personer.kortArray) {
+          minListe.innerHTML +=
+            "<option>" + personer.kortArray[element].navn + "</option>";
+        }
+      }
+
+      minListe.addEventListener("change", fyllInnInformasjon);
+
+      function fyllInnInformasjon() {
+        let valgtPerson = personer.kortArray[minListe.selectedIndex];
+
+        kortNavn.innerHTML = valgtPerson.navn;
+        kortKjonn.innerHTML = valgtPerson.kjonn;
+        kortStilling.innerHTML = valgtPerson.stilling;
+        kortAdresse.innerHTML = valgtPerson.adresse;
+        kortTelefonnummer.innerHTML = valgtPerson.telefonnummer;
+        kortEmail.innerHTML = valgtPerson.email;
+        kortDato.innerHTML = valgtPerson.dato;
+        bilde.src = valgtPerson.bilde;
+        bilde.style.zIndex = -5;
+        kort.style.color = valgtPerson.farge;
+      }
 
       // Funksjonen oppdaterer klientens input fortløpende på kortet
       function oppdater(element) {
