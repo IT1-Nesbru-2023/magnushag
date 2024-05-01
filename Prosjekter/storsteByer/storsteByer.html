@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Norges største byer</title>
+    <style>
+      #overskrift {
+        text-align: center;
+        margin: 100px;
+        font-size: 40px;
+      }
+      #hoved {
+        display: grid;
+        background-color: antiquewhite;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(5, 1fr);
+      }
+      #hoved > div {
+        background-color: aliceblue;
+      }
+
+      #hoved > div:nth-child(odd) {
+        background-color: lightblue;
+      }
+
+      .by {
+        padding: 20px;
+        font-size: 20px;
+      }
+
+      .inpBy {
+        padding: 20px;
+        font-size: 20px;
+      }
+
+      #boks {
+        background-color: lightgreen;
+        border: 1px solid green;
+        height: 20px;
+        width: 100px;
+        margin: 20px;
+      }
+
+      #inpBoks {
+        background-color: lightgreen;
+        border: 1px solid green;
+        height: 20px;
+        width: 0px;
+        margin: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="overskrift">Norges storste byer</h1>
+
+    <div id="hoved">
+      <div class="by">Oslo</div>
+      <div><div id="boks">1082575</div></div>
+      <div class="by">Bergen</div>
+      <div><div id="boks">269548</div></div>
+      <div class="by">Stavanger</div>
+      <div><div id="boks">234757</div></div>
+      <div class="by">Tronheim</div>
+      <div><div id="boks">196948</div></div>
+      <div class="by">Drammen</div>
+      <div><div id="boks">122955</div></div>
+      <div class="inpBy">
+        <label for="byer">Velg en by:</label>
+
+        <select name="byer" id="valgtBy" onmouseup="oppdater()">
+          <option value="58400">Asker</option>
+          <option value="64000">Trosmø</option>
+          <option value="1100000">Stocholm</option>
+          <option value="1400000">København</option>
+        </select>
+      </div>
+      <div><div id="inpBoks"></div></div>
+    </div>
+    <script>
+      let bokser = document.querySelectorAll("#boks");
+
+      let befolkning = [1082575, 269548, 234757, 196948, 122955];
+
+      let maks = 2000000;
+
+      document.addEventListener("DOMContentLoaded", lagSoyler);
+
+      function lagSoyler() {
+        for (let i = 0; i < befolkning.length; i++) {
+          bokser[i].style.width = (befolkning[i] / maks) * 1000 + "px";
+        }
+      }
+
+      function oppdater() {
+        let tall = document.getElementById("valgtBy").value; 
+        let tallBoks = document.getElementById("inpBoks");
+        tallBoks.innerHTML = tall; 
+
+        inpBoks.style.width = ( Number(tall) / maks)* 1000 + "px";
+
+
+      }
+
+
+
+    </script>
+  </body>
+</html>
