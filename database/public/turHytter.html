@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Turisthytter</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,100&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Roboto", sans-serif;
+      }
+      #turisthytteNedtrekk {
+        background-color: lightgray;
+        padding: 50px;
+        text-align: center;
+        font-size: 30px;
+      }
+      #infTekst {
+        background-color: lightgreen;
+        text-align: center;
+        margin: 0;
+        padding: 50px;
+      }
+      #inf {
+        text-decoration: underline;
+      }
+      img {
+        width: 400px;
+      }
+      #hoved {
+        background-color: lightcoral;
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: 1fr 1fr;
+        padding: 50px;
+      }
+      #temp {
+        text-align: center;
+        background-color: lightcoral;
+        margin: 0;
+        padding: 40px;
+      }
+      #div {
+        background-color: lightcyan;
+        text-align: center;
+        margin: 0;
+        padding: 40px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="turisthytteNedtrekk">
+      <label for="turisthytter">Velg en turisthytte:</label>
+
+      <select name="turisthytter" id="valgtTuristhytte" onmouseup="visInf()">
+        <option value="hein">Heinseter</option>
+        <option value="gausta">Gaustatoppen turisthytte</option>
+        <option value="hedlo">Hedlo turisthytte</option>
+        <option value="leir">Leirvassbu turisthytte</option>
+        <option value="mem">Memurubu</option>
+      </select>
+    </div>
+
+    <div id="infTekst">
+      <p>Kontakt turisthytten på <span id="inf"></span></p>
+      <img src="" id="bilde" />
+    </div>
+
+    <p id="temp">Tempereatur denen uken:</p>
+    <div id="hoved">
+      <div>man</div>
+      <div>tir</div>
+      <div>ons</div>
+      <div>tor</div>
+      <div>fre</div>
+      <div>lør</div>
+      <div>søn</div>
+      <div class="tempDager">1</div>
+      <div class="tempDager">1</div>
+      <div class="tempDager">1</div>
+      <div class="tempDager">1</div>
+      <div class="tempDager">1</div>
+      <div class="tempDager">1</div>
+      <div class="tempDager">1</div>
+    </div>
+
+    <div id="div">
+      <p>
+        Gjennomsnittstemperaturen denne uken er: <span id="gjennomsnitt"></span>
+      </p>
+      <p>Minimumstemperaturen denne uken er: <span id="min"></span></p>
+      <p>Maksimumstempereaturen denne uken er: <span id="max"></span></p>
+    </div>
+
+    <script>
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+      import {
+        getFirestore,
+        query,
+        collection,
+        getDoc,
+        getDocs,
+        doc,
+        addDoc,
+        updateDoc,
+        deleteDoc,
+        onSnapshot,
+        orderBy,
+        where,
+        limit,
+      } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyDIvF0Wlz_bkUeDjn4iD-ZXdPtaISxqk2s",
+        authDomain: "huskeliste-69727.firebaseapp.com",
+        databaseURL:
+          "https://huskeliste-69727-default-rtdb.europe-west1.firebasedatabase.app",
+        projectId: "huskeliste-69727",
+        storageBucket: "huskeliste-69727.appspot.com",
+        messagingSenderId: "471289527865",
+        appId: "1:471289527865:web:8ee67067902da24cacd7e8",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+
+      let tempHein = [-5, -4, -3, 0, 2, 3, 2];
+      let tempGausta = [-5, -5, -5, 0, 2, 3, 2];
+      let tempHedlo = [-8, -8, -3, 0, 2, 6, 2];
+      let tempLeir = [-5, -5, -3, 0, 4, 5, 2];
+      let tempMem = [-10, -5, -5, 0, 2, 3, 2];
+
+      let dager = document.querySelectorAll(".tempDager");
+
+      function visInf() {
+        let verdi = document.getElementById("valgtTuristhytte").value;
+        let info = document.getElementById("inf");
+        let temperatur;
+
+        if (verdi == "hein") {
+          info.innerHTML = "tlf: 61 28 40 00 eller e-post: post@hein.no";
+          bilde.src = verdi + ".PNG";
+          temperatur = tempHein;
+        } else if (verdi == "gausta") {
+          info.innerHTML = "tlf: 61 29 49 40 eller e-post: post@gtoppen.no";
+          bilde.src = verdi + ".PNG";
+          temperatur = tempGausta;
+        } else if (verdi == "hedlo") {
+          info.innerHTML = "tlf: 61 29 49 40 eller e-post: post@hedlo.no";
+          bilde.src = verdi + ".PNG";
+          temperatur = tempHedlo;
+        } else if (verdi == "leir") {
+          info.innerHTML = "tlf: 61 29 49 40 eller e-post: post@leir.no";
+          bilde.src = verdi + ".PNG";
+          temperatur = tempLeir;
+        } else {
+          info.innerHTML = "tlf: 61 29 49 40 eller e-post: post@mem.no";
+          bilde.src = verdi + ".PNG";
+          temperatur = tempMem;
+        }
+
+        for (let i = 0; i < dager.length; i++) {
+          dager[i].innerHTML = temperatur[i];
+        }
+
+        document.getElementById("min").innerHTML = Math.min(...temperatur);
+        document.getElementById("max").innerHTML = Math.max(...temperatur);
+
+        gjennomsnitt(temperatur);
+      }
+
+      function gjennomsnitt(temperatur) {
+        let sum = 0;
+        for (let i = 0; i < temperatur.length; i++) {
+          sum += temperatur[i];
+        }
+        document.getElementById("gjennomsnitt").innerHTML =
+          sum / temperatur.length;
+      }
+    </script>
+  </body>
+</html>

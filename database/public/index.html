@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <title>Huskeliste</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <div id="hoved">
+      <h1>Huskeliste</h1>
+      <ul></ul>
+    </div>
+    <input
+      type="text"
+      id="nyttElement"
+      placeholder="Legg til i huskelisten..."
+    >
+    <button onclick="leggTilElement()">Legg til</button>
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+      import {
+        getFirestore,
+        query,
+        collection,
+        getDoc,
+        addDoc,
+        getDocs,
+        doc,
+        updateDoc,
+        deleteDoc,
+        onSnapshot,
+        orderBy,
+        where,
+        limit,
+      } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyDIvF0Wlz_bkUeDjn4iD-ZXdPtaISxqk2s",
+        authDomain: "huskeliste-69727.firebaseapp.com",
+        projectId: "huskeliste-69727",
+        storageBucket: "huskeliste-69727.appspot.com",
+        messagingSenderId: "471289527865",
+        appId: "1:471289527865:web:8ee67067902da24cacd7e8",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+
+      // Spørring som angir hva vi vil hente fra "huskeliste" fra databasen (db)
+      const q = query(collection(db, "huskeliste"));
+
+      // Henter alle dokumenter fra databasen som svarer til spørringen ovenfor
+      const huskeDokumenter = await getDocs(q);
+
+      let ulEl = document.querySelector("ul");
+
+      // Går gjennom alle dokumentene i huskeDokumenter (med forEach)
+      huskeDokumenter.forEach((huskeDokument) => {
+        // Sender dokumentene til funksjonen visHuskeElement()
+        visHuskeElement(huskeDokument);
+      });
+
+      // Funksjon som viser hvert element
+      function visHuskeElement(dokument) {
+        // Lager et <li>-element
+        let liEl = document.createElement("li");
+
+        // Legger til huskelisteteksten i <li>-elementet
+        liEl.innerHTML = dokument.data().hei;
+
+        // Legger til <li>-elementet i <ul>-elementet
+        ulEl.appendChild(liEl);
+
+        let liEl2 = document.createElement("li");
+
+        // Legger til huskelisteteksten i <li>-elementet
+        liEl2.innerHTML = dokument.data().husketekst;
+
+        // Legger til <li>-elementet i <ul>-elementet
+        ulEl.appendChild(liEl2);
+      }
+
+      // Funksjon for å legge til et nytt element i huskelisten
+      async function leggTilElement() {
+        const nyttElementInput = document.getElementById("nyttElement").value;
+
+        // Legg til det nye elementet i databasen
+        await addDoc(collection(db, "huskeliste"), {
+          hei: "Test", // Du kan endre dette til hva du vil at skal lagres i databasen
+          husketekst: nyttElementInput,
+        });
+
+        // Oppdater visningen av huskelisten
+        const nyttElementLi = document.createElement("li");
+        nyttElementLi.innerHTML = nyttElementInput;
+        ulEl.appendChild(nyttElementLi);
+      }
+    </script>
+  </body>
+</html>
