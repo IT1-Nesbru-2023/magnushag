@@ -20,24 +20,32 @@
       h2 {
         font-family: Arial, sans-serif;
       }
-
-      .listediv {
-        display: flex;
-        margin: 12px 0;
+      #liste {
+        font-size: 30px;
+        margin-top: 20px;
       }
-      .listediv > div {
+      .message {
+        display: block; 
         border: 2px solid #7a9a99;
-        border-radius: 0 5px;
+        border-radius: 5px;
         background-color: #c9d6d6;
         padding: 15px;
-        margin-right: 10px;
+        margin-bottom: 10px;
+      }
+      .slett {
+        background-color: #cc0000;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 3px;
         cursor: pointer;
-        flex-grow: 1;
       }
-      .ferdig {
-        opacity: 0.3;
+      .slett:hover {
+        background-color: #aa0000;
       }
-
+      #inpNavn {
+        width: 50px;
+      }
       input[type="text"],
       input[type="number"],
       textarea,
@@ -57,7 +65,6 @@
         min-width: 130px;
         width: 60%;
       }
-
       button {
         padding: 10px;
         color: white;
@@ -76,21 +83,16 @@
       #ok {
         background-color: #66bb00;
       }
-      .slett {
-        background-color: #cc0000;
-        scale: 0.8;
-      }
-      #liste {
-        font-size: 30px;
-      }
     </style>
   </head>
   <body>
     <div id="hoved">
-      <h1>Huskeliste</h1>
-      <input type="text" id="inpTekst" />
-      <button id="ok">Legg til</button>
+      <h1>Chat</h1>
+      <h3>Navn:</h3>
+      <input type="text" id="inpNavn" />
       <div id="liste"></div>
+      <input type="text" id="inpTekst" placeholder="Skriv melding..." />
+      <button id="ok">Send</button>
     </div>
     <script type="module">
       // Import the functions you need from the SDKs you need
@@ -130,6 +132,7 @@
       const db = getFirestore(app);
 
       let inpTekst = document.getElementById("inpTekst");
+      let inpNavn = document.getElementById("inpNavn");
       let btnOK = document.getElementById("ok");
       let firebaseInnhold = document.getElementById("liste");
 
@@ -139,9 +142,10 @@
         // Skriv dataene i Firebase
         await addDoc(collection(db, "huskeliste"), {
           ting: inpTekst.value,
+          navn: inpNavn.value,
         });
 
-        //Tøm inputfeltene
+        //Tøm inputfeltet
         inpTekst.value = "";
       }
 
@@ -161,20 +165,23 @@
       function skrivTing(dok) {
         // Legg til dokumentets tekst og en knapp med tilhørende id-er
         let tingDiv = document.createElement("div");
+        tingDiv.className = "message";
         tingDiv.innerHTML = `
-          <div>${dok.data().ting}</div>
-          <button class='slett' data-id='${dok.id}'>Slett</button>
-        `;
+        <div>${dok.data().navn + ": " + dok.data().ting}</div>
+        <button class='slett' data-id='${dok.id}'>Slett</button>
+      `;
         firebaseInnhold.appendChild(tingDiv);
 
         // Legg til en event listener for sletting
-        tingDiv.querySelector(".slett").addEventListener("click", slettHusketing);
+        tingDiv
+          .querySelector(".slett")
+          .addEventListener("click", slettHusketing);
       }
 
       async function slettHusketing(event) {
         // Hent dokument-ID fra data-attributtet
         let dokId = event.target.getAttribute("data-id");
-        
+
         // Slett dokumentet fra Firebase
         await deleteDoc(doc(db, "huskeliste", dokId));
       }
